@@ -81,8 +81,11 @@
 - [x] Publish the reviewed V2 source and the disabled website tester boundary.
 - [x] Record a separate owner decision approving one inert Blueprint sync and
   service creation without DNS, CORS, website, or maintenance-mode activation.
-- [ ] Capture live Render health, domain, notification, metric, log, and rollback
-  evidence only after a separately approved inert Blueprint sync.
+- [ ] Complete live Render health, domain, notification, metric, log, and
+  rollback evidence. The first inert audit verified the exact live commit,
+  isolation, maintenance state, configuration, clean startup logs, metrics
+  surface, and failure notifications; the live health response, custom-domain
+  TLS, and rollback remain unavailable or blocked.
 - [ ] Complete protected-preview privacy, assistive-technology, and Deaf/SgSL
   review.
 - [x] Record the inert service-creation decision; keep public activation
@@ -114,5 +117,9 @@
 - [x] Obtain repository-owner approval of the changed surface-analysis candidate.
 - [x] Review the V2 documentation and publish the approved source at
   `https://github.com/Viathorne-Labs/viasign-parser`.
-- [ ] Publish the reconciled release and inert-deployment record before syncing
-  the Render Blueprint.
+- [x] Publish the reconciled release before syncing the Render Blueprint; the
+  first service deployed exact merge commit
+  `e8ca6a688c6905fba1f2f02646b665623f0c689e`.
+- [x] Obtain repository-owner approval to publish the post-sync inert-service
+  audit checkpoint.
+- [ ] Merge the approved inert-service audit checkpoint into public `main`.

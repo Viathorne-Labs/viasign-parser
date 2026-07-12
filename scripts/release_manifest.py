@@ -120,9 +120,9 @@ def build_manifest(root: Path = ROOT) -> dict[str, object]:
 
     return {
         "manifest_version": "viasign.public-release-manifest.v1",
-        "candidate_id": "viasign-parser-public-v2-surface-published",
+        "candidate_id": "viasign-parser-public-v2-inert-audit-candidate",
         "snapshot_date": "2026-07-13",
-        "status": "published_source_inert_service_approved",
+        "status": "inert_service_audit_publication_authorized",
         "hash_algorithm": "sha256",
         "root": ".",
         "manifest_self_path": MANIFEST_RELATIVE_PATH.as_posix(),
@@ -130,11 +130,12 @@ def build_manifest(root: Path = ROOT) -> dict[str, object]:
         "publication_authorized": True,
         "deployment_authorized": False,
         "inert_service_creation_authorized": True,
+        "inert_service_created": True,
         "public_activation_authorized": False,
         "published_source": {
             "repository": "https://github.com/Viathorne-Labs/viasign-parser",
             "branch": "main",
-            "commit": "e9e2f94b2b3f5e22c9be4a29026e00f3b9ffb693",
+            "commit": "e8ca6a688c6905fba1f2f02646b665623f0c689e",
         },
         "required_invariants": {
             "review_required": True,

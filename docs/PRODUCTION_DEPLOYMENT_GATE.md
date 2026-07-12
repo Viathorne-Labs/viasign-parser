@@ -142,8 +142,10 @@ still blocked.
 
 The monitoring signals, conservative stop conditions, activation order, and
 configuration-aware rollback sequence are frozen in
-`docs/EDGE_AND_OPERATIONS_POLICY.md`. Live provider evidence remains impossible
-until a separately approved inert service exists.
+`docs/EDGE_AND_OPERATIONS_POLICY.md`. The separately approved inert service now
+exists; available live evidence and the still-blocked health, domain, rollback,
+and human-review items are recorded in
+`docs/INERT_RENDER_SERVICE_AUDIT_V1.md`.
 
 ## Review gates
 

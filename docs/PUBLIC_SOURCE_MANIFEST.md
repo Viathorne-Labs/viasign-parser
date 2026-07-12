@@ -76,6 +76,12 @@ authored from the public API contract and public provider documentation. They
 contain no private source, user submission, reviewer identity, or linguistic
 material.
 
+`docs/INERT_RENDER_SERVICE_AUDIT_V1.md` was independently authored from public
+repository metadata, non-sensitive provider configuration, and technical
+operational evidence. It excludes provider identifiers, deploy or sync hooks,
+account contact details, credentials, submitted text, parser output, and
+reviewer identities.
+
 `scripts/release_manifest.py`, `scripts/audit_release_candidate.py`, and
 `docs/RELEASE_CANDIDATE_AUDIT_V1.md` were newly authored for this public
 boundary. They enumerate and hash only public candidate files and scan for

@@ -1,7 +1,7 @@
 # Edge and Operations Policy
 
-- **Status:** Inert service creation approved; activation and live evidence blocked
-- **Recorded:** 2026-07-12
+- **Status:** Inert service live; activation blocked; live evidence partial
+- **Recorded:** 2026-07-13
 - **Operational owner:** Repository owner
 - **Public service model:** One stateless Render web-service instance
 
@@ -10,6 +10,10 @@ operations gate. On 2026-07-13 the repository owner approved one inert Blueprint
 sync and service creation. That approval does not include DNS changes,
 production CORS, website connection, maintenance-mode removal, remote previews,
 public traffic, or submissions.
+
+The approved service now runs exact public merge commit
+`e8ca6a688c6905fba1f2f02646b665623f0c689e`. The available live evidence and
+honest gaps are recorded in `docs/INERT_RENDER_SERVICE_AUDIT_V1.md`.
 
 ## Provider findings and honest limits
 
@@ -148,14 +152,21 @@ Official reference: https://render.com/docs/rollbacks
 
 ## Remaining live evidence
 
-This policy can be validated locally, but these items do not exist until an
-explicitly approved inert service is created:
+The first inert-service audit verified the connected public repository, exact
+live commit, Singapore Starter instance, disabled default subdomain, maintenance
+state, empty CORS, clean startup logs, metrics surface, and failure
+notifications. It also found that initial service creation did not apply the
+Blueprint's declared maintenance state; maintenance was enabled immediately and
+verified in the dashboard. Future operations must check live state rather than
+trusting configuration intent alone.
 
-- Render Blueprint validation against the connected repository
-- live Singapore region and Starter instance evidence
-- custom-domain TLS and disabled-subdomain evidence
-- live health, metrics, notifications, logs, and rollback evidence
+The following evidence remains incomplete or blocked:
+
+- the exact live `/healthz` response body
+- custom-domain TLS and HTTP-to-HTTPS behavior, which require approved DNS
+- rollback to an earlier successful artifact, because none exists yet
 - exact-release load and abuse checks
+- assistive-technology, privacy, and Deaf/SgSL review
 
 Maintenance mode and empty CORS must remain until those items and every human
 review gate are complete.

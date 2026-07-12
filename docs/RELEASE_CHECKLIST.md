@@ -62,8 +62,13 @@ maintenance mode on, empty CORS, automatic deploys off, no DNS change, and no
 website connection.
 
 - [x] Inert Blueprint sync and service creation approved.
-- [ ] Reconciled release and deployment records are published before the sync.
-- [ ] Live domain, health, notification, metric, log, and rollback evidence is
-  captured from the inert service.
+- [x] The reconciled public source was published before the sync and exact merge
+  commit `e8ca6a688c6905fba1f2f02646b665623f0c689e` was deployed.
+- [ ] Full live domain, health, notification, metric, log, and rollback evidence
+  is captured from the inert service. The partial evidence and remaining limits
+  are recorded in `docs/INERT_RENDER_SERVICE_AUDIT_V1.md`.
+- [x] The post-sync inert-service audit checkpoint received separate
+  publication approval.
+- [ ] The approved checkpoint is merged into public `main`.
 - [ ] Production CORS, website connection, maintenance-mode removal, public
   traffic, and submissions receive separate explicit approvals.
