@@ -152,17 +152,17 @@ Official reference: https://render.com/docs/rollbacks
 
 ## Remaining live evidence
 
-The first inert-service audit verified the connected public repository, exact
-live commit, Singapore Starter instance, disabled default subdomain, maintenance
-state, empty CORS, clean startup logs, metrics surface, and failure
-notifications. It also found that initial service creation did not apply the
-Blueprint's declared maintenance state; maintenance was enabled immediately and
-verified in the dashboard. Future operations must check live state rather than
-trusting configuration intent alone.
+The inert-service audit verified the connected public repository, exact live
+commit, Singapore Starter instance, disabled default subdomain, maintenance
+state, empty CORS, clean startup logs, metrics surface, failure notifications,
+and an internal `HTTP 200` health response with exactly `{"status":"ok"}`. It
+also found that initial service creation did not apply the Blueprint's declared
+maintenance state; maintenance was enabled immediately and verified in the
+dashboard. Future operations must check live state rather than trusting
+configuration intent alone.
 
 The following evidence remains incomplete or blocked:
 
-- the exact live `/healthz` response body
 - custom-domain TLS and HTTP-to-HTTPS behavior, which require approved DNS
 - rollback to an earlier successful artifact, because none exists yet
 - exact-release load and abuse checks

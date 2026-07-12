@@ -172,9 +172,8 @@ Official references:
   application deadline, and freeze monitoring, stop, and rollback procedures in
   `docs/EDGE_AND_OPERATIONS_POLICY.md`.
 - [ ] Complete live domain, health, notification, metric, log, and rollback
-  evidence. The first inert audit captured the available evidence, but the live
-  health response, custom-domain TLS, and rollback remain unavailable or
-  separately blocked.
+  evidence. The exact internal health response is verified; custom-domain TLS
+  and rollback remain unavailable or separately blocked.
 - [ ] Complete assistive-technology and Deaf/SgSL review.
 - [x] Record explicit approval for one inert Blueprint sync and service
   creation; activation remains unapproved.

@@ -68,10 +68,11 @@ def test_inert_service_audit_records_partial_evidence_without_activation() -> No
         encoding="utf-8"
     )
 
-    assert "Owner-approved publication candidate; public activation blocked" in audit
+    assert "Owner-approved internal health update; activation blocked" in audit
     assert "Maintenance mode is enabled" in audit
     assert "VIASIGN_CORS_ORIGINS` is empty" in audit
-    assert "live application response body from `/healthz` was not" in audit
+    assert "HTTP 200" in audit
+    assert '{"status":"ok"}' in audit
     assert "no earlier successful artifact exists" in audit
     assert "`review_required=true`" in audit
     assert "`motion_ready=false`" in audit

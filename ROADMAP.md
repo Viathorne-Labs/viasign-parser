@@ -84,8 +84,10 @@
 - [ ] Complete live Render health, domain, notification, metric, log, and
   rollback evidence. The first inert audit verified the exact live commit,
   isolation, maintenance state, configuration, clean startup logs, metrics
-  surface, and failure notifications; the live health response, custom-domain
-  TLS, and rollback remain unavailable or blocked.
+  surface, failure notifications, and exact internal health response;
+  custom-domain TLS and rollback remain unavailable or blocked.
+- [x] Verify the exact internal `/healthz` response while maintenance mode and
+  empty CORS remained unchanged.
 - [ ] Complete protected-preview privacy, assistive-technology, and Deaf/SgSL
   review.
 - [x] Record the inert service-creation decision; keep public activation
@@ -122,4 +124,7 @@
   `e8ca6a688c6905fba1f2f02646b665623f0c689e`.
 - [x] Obtain repository-owner approval to publish the post-sync inert-service
   audit checkpoint.
-- [ ] Merge the approved inert-service audit checkpoint into public `main`.
+- [x] Merge the approved inert-service audit checkpoint into public `main` at
+  `842a9ad820e4ac919fb88371a3ab9199ebc74a79`.
+- [x] Obtain repository-owner approval to publish the internal-health evidence.
+- [ ] Merge the approved internal-health evidence into public `main`.
