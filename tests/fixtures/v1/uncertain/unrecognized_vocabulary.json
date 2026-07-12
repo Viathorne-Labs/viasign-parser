@@ -1,0 +1,29 @@
+{
+  "schema_version": "viasign.parser.response.v1",
+  "outcome": "uncertain",
+  "status": "review_required",
+  "input": {
+    "mode": "natural"
+  },
+  "analysis": {
+    "intent": "statement",
+    "sign_aware_form": null,
+    "candidate_glosses": []
+  },
+  "warnings": [
+    {
+      "code": "unrecognized_vocabulary",
+      "message": "One or more words do not have a reviewed public mapping.",
+      "field": "request.text",
+      "review_state": "review_required"
+    }
+  ],
+  "review_required": true,
+  "motion_ready": false,
+  "provenance": {
+    "parser_id": "viasign-parser",
+    "parser_version": "contract-fixture",
+    "ruleset_version": "not-implemented",
+    "contract_version": "1.0.0"
+  }
+}

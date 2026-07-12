@@ -1,0 +1,390 @@
+{
+  "$defs": {
+    "ContractProvenance": {
+      "additionalProperties": false,
+      "description": "Identifies the implementation and ruleset that produced a response.",
+      "properties": {
+        "contract_version": {
+          "const": "1.0.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "parser_id": {
+          "const": "viasign-parser",
+          "title": "Parser Id",
+          "type": "string"
+        },
+        "parser_version": {
+          "maxLength": 50,
+          "minLength": 1,
+          "title": "Parser Version",
+          "type": "string"
+        },
+        "ruleset_version": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Ruleset Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "parser_id",
+        "parser_version",
+        "ruleset_version",
+        "contract_version"
+      ],
+      "title": "ContractProvenance",
+      "type": "object"
+    },
+    "ContractWarning": {
+      "additionalProperties": false,
+      "description": "Visible uncertainty or a public safety warning.",
+      "properties": {
+        "code": {
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Code",
+          "type": "string"
+        },
+        "field": {
+          "anyOf": [
+            {
+              "maxLength": 100,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Field"
+        },
+        "message": {
+          "maxLength": 500,
+          "minLength": 1,
+          "title": "Message",
+          "type": "string"
+        },
+        "review_state": {
+          "const": "review_required",
+          "title": "Review State",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "field",
+        "review_state"
+      ],
+      "title": "ContractWarning",
+      "type": "object"
+    },
+    "DraftResponse": {
+      "additionalProperties": false,
+      "description": "Structurally supported draft output that still requires human review.",
+      "properties": {
+        "analysis": {
+          "$ref": "#/$defs/GrammarAnalysis"
+        },
+        "input": {
+          "$ref": "#/$defs/InputMetadata"
+        },
+        "motion_ready": {
+          "const": false,
+          "title": "Motion Ready",
+          "type": "boolean"
+        },
+        "outcome": {
+          "const": "draft",
+          "title": "Outcome",
+          "type": "string"
+        },
+        "provenance": {
+          "$ref": "#/$defs/ContractProvenance"
+        },
+        "review_required": {
+          "const": true,
+          "title": "Review Required",
+          "type": "boolean"
+        },
+        "schema_version": {
+          "const": "viasign.parser.response.v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "const": "review_required",
+          "title": "Status",
+          "type": "string"
+        },
+        "warnings": {
+          "items": {
+            "$ref": "#/$defs/ContractWarning"
+          },
+          "maxItems": 128,
+          "title": "Warnings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "schema_version",
+        "status",
+        "input",
+        "review_required",
+        "motion_ready",
+        "provenance",
+        "outcome",
+        "analysis",
+        "warnings"
+      ],
+      "title": "DraftResponse",
+      "type": "object"
+    },
+    "GrammarAnalysis": {
+      "additionalProperties": false,
+      "description": "Draft grammar-planning fields, never approved translation output.",
+      "properties": {
+        "candidate_glosses": {
+          "items": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Z0-9][A-Z0-9_()/-]*$",
+            "type": "string"
+          },
+          "maxItems": 128,
+          "title": "Candidate Glosses",
+          "type": "array"
+        },
+        "intent": {
+          "enum": [
+            "statement",
+            "question",
+            "self_introduction",
+            "name_sign_request",
+            "unknown"
+          ],
+          "title": "Intent",
+          "type": "string"
+        },
+        "sign_aware_form": {
+          "anyOf": [
+            {
+              "maxLength": 2000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Sign Aware Form"
+        }
+      },
+      "required": [
+        "intent",
+        "sign_aware_form",
+        "candidate_glosses"
+      ],
+      "title": "GrammarAnalysis",
+      "type": "object"
+    },
+    "InputMetadata": {
+      "additionalProperties": false,
+      "description": "Non-sensitive metadata about how the request was interpreted.",
+      "properties": {
+        "mode": {
+          "enum": [
+            "natural",
+            "source_gloss",
+            "unknown"
+          ],
+          "title": "Mode",
+          "type": "string"
+        }
+      },
+      "required": [
+        "mode"
+      ],
+      "title": "InputMetadata",
+      "type": "object"
+    },
+    "UncertainResponse": {
+      "additionalProperties": false,
+      "description": "Draft output with explicit unresolved uncertainty.",
+      "properties": {
+        "analysis": {
+          "$ref": "#/$defs/GrammarAnalysis"
+        },
+        "input": {
+          "$ref": "#/$defs/InputMetadata"
+        },
+        "motion_ready": {
+          "const": false,
+          "title": "Motion Ready",
+          "type": "boolean"
+        },
+        "outcome": {
+          "const": "uncertain",
+          "title": "Outcome",
+          "type": "string"
+        },
+        "provenance": {
+          "$ref": "#/$defs/ContractProvenance"
+        },
+        "review_required": {
+          "const": true,
+          "title": "Review Required",
+          "type": "boolean"
+        },
+        "schema_version": {
+          "const": "viasign.parser.response.v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "const": "review_required",
+          "title": "Status",
+          "type": "string"
+        },
+        "warnings": {
+          "items": {
+            "$ref": "#/$defs/ContractWarning"
+          },
+          "maxItems": 128,
+          "minItems": 1,
+          "title": "Warnings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "schema_version",
+        "status",
+        "input",
+        "review_required",
+        "motion_ready",
+        "provenance",
+        "outcome",
+        "analysis",
+        "warnings"
+      ],
+      "title": "UncertainResponse",
+      "type": "object"
+    },
+    "UnsupportedReason": {
+      "additionalProperties": false,
+      "description": "A reason the public parser intentionally produced no analysis.",
+      "properties": {
+        "code": {
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Code",
+          "type": "string"
+        },
+        "message": {
+          "maxLength": 500,
+          "minLength": 1,
+          "title": "Message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "title": "UnsupportedReason",
+      "type": "object"
+    },
+    "UnsupportedResponse": {
+      "additionalProperties": false,
+      "description": "Fail-closed result with reasons and no grammar analysis.",
+      "properties": {
+        "analysis": {
+          "const": null,
+          "title": "Analysis",
+          "type": "null"
+        },
+        "input": {
+          "$ref": "#/$defs/InputMetadata"
+        },
+        "motion_ready": {
+          "const": false,
+          "title": "Motion Ready",
+          "type": "boolean"
+        },
+        "outcome": {
+          "const": "unsupported",
+          "title": "Outcome",
+          "type": "string"
+        },
+        "provenance": {
+          "$ref": "#/$defs/ContractProvenance"
+        },
+        "review_required": {
+          "const": true,
+          "title": "Review Required",
+          "type": "boolean"
+        },
+        "schema_version": {
+          "const": "viasign.parser.response.v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "const": "review_required",
+          "title": "Status",
+          "type": "string"
+        },
+        "unsupported_reasons": {
+          "items": {
+            "$ref": "#/$defs/UnsupportedReason"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "title": "Unsupported Reasons",
+          "type": "array"
+        },
+        "warnings": {
+          "items": {
+            "$ref": "#/$defs/ContractWarning"
+          },
+          "maxItems": 128,
+          "minItems": 1,
+          "title": "Warnings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "schema_version",
+        "status",
+        "input",
+        "review_required",
+        "motion_ready",
+        "provenance",
+        "outcome",
+        "analysis",
+        "warnings",
+        "unsupported_reasons"
+      ],
+      "title": "UnsupportedResponse",
+      "type": "object"
+    }
+  },
+  "$id": "urn:viathorne:viasign:parser:v1:parser-response",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "discriminator": {
+    "mapping": {
+      "draft": "#/$defs/DraftResponse",
+      "uncertain": "#/$defs/UncertainResponse",
+      "unsupported": "#/$defs/UnsupportedResponse"
+    },
+    "propertyName": "outcome"
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/DraftResponse"
+    },
+    {
+      "$ref": "#/$defs/UncertainResponse"
+    },
+    {
+      "$ref": "#/$defs/UnsupportedResponse"
+    }
+  ]
+}

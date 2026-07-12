@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: viasign-parser-api
+    runtime: docker
+    region: singapore
+    plan: starter
+    numInstances: 1
+    autoDeployTrigger: "off"
+    domains:
+      - api.viathorne.com
+    renderSubdomainPolicy: disabled
+    healthCheckPath: /healthz
+    maxShutdownDelaySeconds: 10
+    maintenanceMode:
+      enabled: true
+    envVars:
+      - key: VIASIGN_HOST
+        value: 0.0.0.0
+      - key: VIASIGN_PORT
+        value: "10000"
+      - key: VIASIGN_CORS_ORIGINS
+        value: ""
+      - key: VIASIGN_ACCESS_LOG
+        value: "false"
+      - key: VIASIGN_TRUST_RENDER_PROXY
+        value: "true"

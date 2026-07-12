@@ -1,0 +1,121 @@
+{
+  "record_version": "viasign.public-provenance.v1",
+  "snapshot_date": "2026-07-12",
+  "source_repository_alias": "private-viasign-source",
+  "source_snapshot_revision": "15fa774cf1c625a580eac23a2ed110e22a81b781",
+  "privacy": {
+    "absolute_paths_recorded": false,
+    "author_names_recorded": false,
+    "author_emails_recorded": false,
+    "private_content_embedded": false
+  },
+  "candidates": [
+    {
+      "candidate_id": "package_marker",
+      "source_relative_path": "sgsl/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "line_count": 0,
+      "byte_count": 0,
+      "git_distinct_author_count": 1,
+      "rights_confirmation": "not_required_empty_file",
+      "dependency_summary": [],
+      "content_scan": {
+        "known_absolute_path_match": false,
+        "credential_name_pattern_match": false,
+        "embedded_example_match": false
+      },
+      "source_derived_risk": "none",
+      "decision": "recreated_no_copy",
+      "decision_reason": "The private file is empty; the public package marker was independently recreated."
+    },
+    {
+      "candidate_id": "parser_v2_implementation",
+      "source_relative_path": "sgsl/parser_v2.py",
+      "sha256": "c619eb4ebd33475f6eaaef7ff0b23d69bdd032264c25383ed2675f84d46f34dc",
+      "git_blob_sha1": "5696020b3639e805826fd99ce689bf48fd5a6dca",
+      "line_count": 1848,
+      "byte_count": 58930,
+      "git_distinct_author_count": 1,
+      "rights_confirmation": "pending_owner_attestation",
+      "dependency_summary": [
+        "private parser type module",
+        "private curated lexicon normalization",
+        "Python standard library"
+      ],
+      "content_scan": {
+        "known_absolute_path_match": false,
+        "credential_name_pattern_match": false,
+        "embedded_example_match": true
+      },
+      "source_derived_risk": "high",
+      "decision": "block_direct_copy_clean_room_reimplementation",
+      "decision_reason": "The implementation mixes general parser mechanics with reviewed sentence special cases, source-gloss rules, and private lexicon dependencies."
+    },
+    {
+      "candidate_id": "parser_v2_types",
+      "source_relative_path": "sgsl/parser_v2_types.py",
+      "sha256": "25444cb50edfc7b53fc97076f35e8592abeff98a37ceb698031e723a41f26d8d",
+      "git_blob_sha1": "3c7832d391cc81f4e34b3f0c1e5410dc04200700",
+      "line_count": 760,
+      "byte_count": 24784,
+      "git_distinct_author_count": 1,
+      "rights_confirmation": "pending_owner_attestation",
+      "dependency_summary": [
+        "Python standard library"
+      ],
+      "content_scan": {
+        "known_absolute_path_match": false,
+        "credential_name_pattern_match": false,
+        "embedded_example_match": false
+      },
+      "source_derived_risk": "medium",
+      "decision": "superseded_no_copy",
+      "decision_reason": "The private type surface is broader than the public boundary and is superseded by the independently authored versioned public contract."
+    },
+    {
+      "candidate_id": "lexicon",
+      "source_relative_path": "sgsl/lexicon.py",
+      "sha256": "a95d37e565d2bef1538f5f230e6215fc0a65b495461bb40ca38c408cc6196010",
+      "git_blob_sha1": "64532843c3774242e1676bbcabd0bdb1ebe541bd",
+      "line_count": 981,
+      "byte_count": 15942,
+      "git_distinct_author_count": 1,
+      "rights_confirmation": "pending_owner_attestation",
+      "dependency_summary": [
+        "Python standard library"
+      ],
+      "content_scan": {
+        "known_absolute_path_match": false,
+        "credential_name_pattern_match": false,
+        "embedded_example_match": true
+      },
+      "source_derived_risk": "high",
+      "decision": "block_direct_copy_rebuild_from_public_sources",
+      "decision_reason": "Git lineage records a raw imported vocabulary bank and later curation, so the current consolidated vocabulary cannot be cleanly separated by inspection alone."
+    },
+    {
+      "candidate_id": "runtime_demo",
+      "source_relative_path": "runtime/text_to_sgsl_demo.py",
+      "sha256": "55f22df3025174646363f130242e1356e6d8853c45595b18608b4bba2dbf1e27",
+      "git_blob_sha1": "e6750c9280ea0bc97ccbfde9daa6dbe080e39000",
+      "line_count": 131,
+      "byte_count": 4446,
+      "git_distinct_author_count": 1,
+      "rights_confirmation": "pending_owner_attestation",
+      "dependency_summary": [
+        "private Parser V2 implementation",
+        "Python standard library"
+      ],
+      "content_scan": {
+        "known_absolute_path_match": false,
+        "credential_name_pattern_match": false,
+        "embedded_example_match": true
+      },
+      "source_derived_risk": "medium",
+      "decision": "rewrite_later_no_copy",
+      "decision_reason": "The CLI structure is generic, but it embeds private-parser examples and imports; a smaller contract-native CLI should be authored later."
+    }
+  ]
+}
+

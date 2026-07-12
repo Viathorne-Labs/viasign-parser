@@ -1,0 +1,20 @@
+{
+  "$id": "urn:viathorne:viasign:parser:v1:parse-request",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "A single typed input for draft grammar planning.",
+  "properties": {
+    "text": {
+      "maxLength": 1000,
+      "minLength": 1,
+      "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$",
+      "title": "Text",
+      "type": "string"
+    }
+  },
+  "required": [
+    "text"
+  ],
+  "title": "ParseRequest",
+  "type": "object"
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "viasign.parser.response.v1",
+  "outcome": "unsupported",
+  "status": "review_required",
+  "input": {
+    "mode": "natural"
+  },
+  "analysis": null,
+  "warnings": [
+    {
+      "code": "cultural_action_not_supported",
+      "message": "The public parser does not create or assign name signs.",
+      "field": "request.text",
+      "review_state": "review_required"
+    }
+  ],
+  "unsupported_reasons": [
+    {
+      "code": "name_sign_generation_blocked",
+      "message": "Name-sign creation requires appropriate human and community processes."
+    }
+  ],
+  "review_required": true,
+  "motion_ready": false,
+  "provenance": {
+    "parser_id": "viasign-parser",
+    "parser_version": "contract-fixture",
+    "ruleset_version": "not-implemented",
+    "contract_version": "1.0.0"
+  }
+}
