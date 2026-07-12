@@ -44,11 +44,12 @@ def test_release_manifest_records_publication_and_blocks_activation() -> None:
     assert manifest["publication_authorized"] is True
     assert manifest["deployment_authorized"] is False
     assert manifest["inert_service_creation_authorized"] is True
+    assert manifest["inert_service_created"] is True
     assert manifest["public_activation_authorized"] is False
     assert manifest["published_source"] == {
         "repository": "https://github.com/Viathorne-Labs/viasign-parser",
         "branch": "main",
-        "commit": "e9e2f94b2b3f5e22c9be4a29026e00f3b9ffb693",
+        "commit": "e8ca6a688c6905fba1f2f02646b665623f0c689e",
     }
     assert manifest["required_invariants"] == {
         "review_required": True,

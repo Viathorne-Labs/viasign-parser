@@ -1,7 +1,7 @@
 # Render Hosting Decision
 
-- **Status:** Inert Blueprint sync approved; public activation blocked
-- **Recorded:** 2026-07-12
+- **Status:** Inert service live; public activation blocked
+- **Recorded:** 2026-07-13
 - **Provider:** Render
 - **Owner-reported workspace plan:** Pro
 - **Planned service region:** Singapore
@@ -12,6 +12,12 @@ The repository owner approved one inert Blueprint sync and service creation on
 maintenance mode on, empty CORS, automatic deploys off, one Starter instance,
 and no website connection or DNS change. It does not approve production CORS,
 maintenance-mode removal, visitor traffic, or submissions.
+
+The inert service now runs exact public merge commit
+`e8ca6a688c6905fba1f2f02646b665623f0c689e`. The live configuration, isolation,
+logs, metrics surface, notifications, and remaining evidence gaps are recorded
+in `docs/INERT_RENDER_SERVICE_AUDIT_V1.md`. The service remains in maintenance
+mode with empty CORS and no website or DNS connection.
 
 ## Why Render fits this stage
 
@@ -165,8 +171,10 @@ Official references:
 - [x] Record Render's body-limit and timeout gaps, add a three-second fail-closed
   application deadline, and freeze monitoring, stop, and rollback procedures in
   `docs/EDGE_AND_OPERATIONS_POLICY.md`.
-- [ ] Capture live domain, health, notification, metric, log, and rollback
-  evidence after an explicitly approved inert Blueprint sync.
+- [ ] Complete live domain, health, notification, metric, log, and rollback
+  evidence. The first inert audit captured the available evidence, but the live
+  health response, custom-domain TLS, and rollback remain unavailable or
+  separately blocked.
 - [ ] Complete assistive-technology and Deaf/SgSL review.
 - [x] Record explicit approval for one inert Blueprint sync and service
   creation; activation remains unapproved.

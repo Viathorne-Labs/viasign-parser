@@ -63,6 +63,20 @@ def test_edge_and_operations_policy_keeps_public_activation_blocked() -> None:
     assert "`motion_ready=false`" in policy
 
 
+def test_inert_service_audit_records_partial_evidence_without_activation() -> None:
+    audit = (REPOSITORY_ROOT / "docs/INERT_RENDER_SERVICE_AUDIT_V1.md").read_text(
+        encoding="utf-8"
+    )
+
+    assert "Owner-approved publication candidate; public activation blocked" in audit
+    assert "Maintenance mode is enabled" in audit
+    assert "VIASIGN_CORS_ORIGINS` is empty" in audit
+    assert "live application response body from `/healthz` was not" in audit
+    assert "no earlier successful artifact exists" in audit
+    assert "`review_required=true`" in audit
+    assert "`motion_ready=false`" in audit
+
+
 def test_runtime_lock_uses_exact_versions() -> None:
     lines = (REPOSITORY_ROOT / "requirements.lock").read_text(
         encoding="utf-8"
