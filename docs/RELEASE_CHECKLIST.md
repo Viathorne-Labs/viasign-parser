@@ -65,10 +65,14 @@ website connection.
 - [x] The reconciled public source was published before the sync and exact merge
   commit `e8ca6a688c6905fba1f2f02646b665623f0c689e` was deployed.
 - [ ] Full live domain, health, notification, metric, log, and rollback evidence
-  is captured from the inert service. The partial evidence and remaining limits
-  are recorded in `docs/INERT_RENDER_SERVICE_AUDIT_V1.md`.
+  is captured from the inert service. The internal health response is verified;
+  the remaining domain, rollback, and human-review limits are recorded in
+  `docs/INERT_RENDER_SERVICE_AUDIT_V1.md`.
 - [x] The post-sync inert-service audit checkpoint received separate
   publication approval.
-- [ ] The approved checkpoint is merged into public `main`.
+- [x] The approved checkpoint is merged into public `main` at
+  `842a9ad820e4ac919fb88371a3ab9199ebc74a79`.
+- [x] The internal-health evidence received separate publication approval.
+- [ ] The approved internal-health evidence is merged into public `main`.
 - [ ] Production CORS, website connection, maintenance-mode removal, public
   traffic, and submissions receive separate explicit approvals.

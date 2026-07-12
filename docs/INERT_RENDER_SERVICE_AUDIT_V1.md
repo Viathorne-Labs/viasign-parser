@@ -1,9 +1,12 @@
 # Inert Render Service Audit V1
 
-- **Status:** Owner-approved publication candidate; public activation blocked
+- **Status:** Owner-approved internal health update; activation blocked
 - **Recorded:** 2026-07-13
 - **Publication approval:** Repository owner approved all five checkpoint items
   on 2026-07-13
+- **Published audit merge:** `842a9ad820e4ac919fb88371a3ab9199ebc74a79`
+- **Internal-health publication approval:** Repository owner approved all five
+  internal-health publication items on 2026-07-13
 - **Provider:** Render
 - **Service:** `viasign-parser-api`
 - **Live public-source commit:** `e8ca6a688c6905fba1f2f02646b665623f0c689e`
@@ -43,6 +46,28 @@ owner enabled it immediately in the dashboard and verified the corresponding
 service event. Future syncs must therefore verify live maintenance state; the
 checked-in Blueprint declaration is not sufficient evidence by itself.
 
+## Internal health verification
+
+On 2026-07-13, the owner approved the next gate in the recorded sequence. The
+service was queried only from Render's internal shell at
+`http://127.0.0.1:10000/healthz`; no public hostname, parser sentence, or visitor
+request was used.
+
+The minimal container does not include `curl`, so the first attempted command
+made no request. A Python standard-library request then returned:
+
+```text
+HTTP 200
+{"status":"ok"}
+```
+
+The same shell confirmed that `VIASIGN_CORS_ORIGINS` remained the empty string.
+The dashboard still showed maintenance mode enabled, the default Render
+subdomain disabled, automatic deploys off, and custom-domain verification
+waiting for DNS. The application log remained startup-only: it showed no access
+request, submitted text, parser output, error, exception, traceback, failure, or
+panic after the internal check.
+
 ## Logs, metrics, and notifications
 
 The application logs showed a clean startup with no error, exception,
@@ -65,9 +90,6 @@ Official reference: https://render.com/docs/notifications
 
 ## Evidence still blocked or unavailable
 
-- The live application response body from `/healthz` was not independently
-  retrieved. The configured health path and successful live deploy are only
-  indirect evidence; `{"status":"ok"}` remains unverified on Render.
 - This is the first successful deploy, so no earlier successful artifact exists
   and a rollback control was not available. No extra deploy will be created
   merely to manufacture rollback evidence.
@@ -78,10 +100,9 @@ Official reference: https://render.com/docs/notifications
 
 ## Gate verdict
 
-The approved inert service-creation gate is complete and the available live
-evidence is recorded. The full live-operations gate is only partially complete.
-Maintenance mode and empty CORS must remain, and the website must stay
-disconnected.
+The approved inert service-creation and internal health gates are complete. The
+full live-operations gate is only partially complete. Maintenance mode and
+empty CORS must remain, and the website must stay disconnected.
 
 Every parser response must still preserve `review_required=true` and
 `motion_ready=false`. This audit does not establish linguistic correctness,

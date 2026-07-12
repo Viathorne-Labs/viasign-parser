@@ -35,7 +35,7 @@ def test_private_local_markdown_notes_are_excluded(tmp_path) -> None:
     assert collect_release_files(tmp_path) == ()
 
 
-def test_release_manifest_records_publication_and_blocks_activation() -> None:
+def test_release_manifest_records_current_public_state_and_blocks_update() -> None:
     check_manifest()
     manifest = json.loads((ROOT / MANIFEST_RELATIVE_PATH).read_text(encoding="utf-8"))
     generated = build_manifest()
@@ -49,7 +49,13 @@ def test_release_manifest_records_publication_and_blocks_activation() -> None:
     assert manifest["published_source"] == {
         "repository": "https://github.com/Viathorne-Labs/viasign-parser",
         "branch": "main",
+        "commit": "842a9ad820e4ac919fb88371a3ab9199ebc74a79",
+    }
+    assert manifest["live_inert_service"] == {
         "commit": "e8ca6a688c6905fba1f2f02646b665623f0c689e",
+        "health_verified": True,
+        "maintenance_mode": True,
+        "cors_origins": "",
     }
     assert manifest["required_invariants"] == {
         "review_required": True,
