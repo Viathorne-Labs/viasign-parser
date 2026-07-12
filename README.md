@@ -9,6 +9,10 @@ or medical communication.
 
 ## Current state
 
+The reviewed source is published at
+<https://github.com/Viathorne-Labs/viasign-parser>. Source availability does not
+mean that a public parser service or production website connection is active.
+
 No private parser implementation or benchmark data has been migrated.
 
 The provenance gate found mixed private/review lineage in the previous parser
@@ -80,7 +84,9 @@ docker run --rm -p 8000:10000 \
 The Render Blueprint remains inert by default: automatic deploys are disabled,
 maintenance mode is enabled, and CORS is empty. See the
 [Render hosting decision](docs/RENDER_HOSTING_DECISION.md) before changing
-those values.
+those values. One inert Blueprint sync and service creation is approved, but the
+reconciled release record must be published first. DNS, production CORS, website
+connection, maintenance-mode removal, and visitor submissions remain blocked.
 
 ## Repository boundaries
 

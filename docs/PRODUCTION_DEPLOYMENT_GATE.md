@@ -1,12 +1,14 @@
 # Production Deployment Gate
 
-- **Status:** Blocked; planning and local verification only
+- **Status:** Inert service creation approved; public activation blocked
 - **Last reviewed:** 2026-07-13
 - **Applies to:** The public `viasign-parser` HTTP service
 
 Render in Singapore is the selected provider and region. The provider-specific
-facts and blockers are recorded in `docs/RENDER_HOSTING_DECISION.md`. Selection
-does not authorize Blueprint sync or deployment.
+facts and blockers are recorded in `docs/RENDER_HOSTING_DECISION.md`. On
+2026-07-13 the repository owner approved one inert Blueprint sync and service
+creation. That decision does not authorize DNS changes, production CORS,
+website connection, maintenance-mode removal, visitor traffic, or submissions.
 
 This gate is separate from the public-source release gate. Passing source
 review does not authorize hosting, and passing hosting review does not authorize
@@ -150,7 +152,8 @@ be protected by Netlify access control or CORS. Pre-release review remains local
 The following evidence must be recorded before any public activation can accept
 test submissions:
 
-- [ ] Repository owner approves the exact artifact and host.
+- [x] Repository owner approved the published V2 source artifact and the inert
+  Render host configuration.
 - [ ] Security and privacy review approves the complete edge, logging, and
   retention policy; the origin/CSP and privacy-notice preparation is recorded.
 - [ ] Website and API contract-version checks pass together.
@@ -162,6 +165,9 @@ test submissions:
 - [ ] Deaf/SgSL reviewers approve the claims, examples, and review language.
 - [ ] A short, consent-led pilot plan defines audience, duration, feedback path,
   moderation, incident owner, and stop conditions.
-- [ ] A separate explicit deployment approval is recorded.
+- [x] A separate approval for inert service creation is recorded; public
+  activation remains separately blocked.
 
-Until every item is satisfied, local testing is the furthest approved state.
+Until every activation item is satisfied, the furthest approved cloud state is
+one inert service in maintenance mode with empty CORS, no DNS change, and no
+website connection.

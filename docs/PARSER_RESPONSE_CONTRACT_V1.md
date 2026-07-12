@@ -1,6 +1,6 @@
 # Parser Response Contract V1
 
-Status: prepublication contract 1.1.0 candidate; no SgSL rules
+Status: published contract 1.1.0; no SgSL rules
 
 This contract defines public transport structure. It does not implement SgSL
 grammar and does not make its synthetic examples linguistically authoritative.

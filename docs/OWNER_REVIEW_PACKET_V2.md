@@ -1,21 +1,24 @@
 # Repository Owner Review Packet V2
 
-- **Status:** Prepared; owner approval not yet recorded
+- **Status:** Owner approval recorded; source published
 - **Reviewed:** 2026-07-13
-- **Candidate:** `viasign-parser-public-v2-surface-prepublication`
+- **Candidate:** `viasign-parser-public-v2-surface-published`
 - **Exact file record:** `provenance/v1/release-candidate-manifest.json`
 - **Parent clean commit:** `07c835ca279ea1792b29f53630062e816e3ec282`
+- **Published commit:** `e9e2f94b2b3f5e22c9be4a29026e00f3b9ffb693`
 
 This packet covers the clean-room natural-English surface analyzer added after
 the initial safety-only candidate. It is a project review aid, not legal advice.
-Completing it does not authorize repository publication, Render deployment,
-production CORS, public traffic, SgSL claims, or submissions.
+The repository owner approved all five source-review items on 2026-07-13, and a
+later separate decision authorized publication under `Viathorne-Labs`. Those
+decisions did not authorize Render deployment, production CORS, public traffic,
+SgSL claims, or submissions.
 
 ## Change from the approved V1 candidate
 
 The V1 owner decision approved only the initial safety-only snapshot. V2 adds an
-independently authored surface analyzer and advances the prepublication contract
-from `1.0.0` to `1.1.0`.
+independently authored surface analyzer and advances the public contract from
+`1.0.0` to `1.1.0`.
 
 For ordinary natural-English input, V2 may report only:
 
@@ -81,23 +84,25 @@ Repository-owner approval cannot replace:
 
 ## Owner decision record
 
-Leave every item unchecked until the repository owner explicitly confirms it:
+The repository owner explicitly confirmed every item on 2026-07-13. The public
+record omits personal signatures, contact details, and identity documents:
 
-- [ ] I approve the independently authored V0.1 natural-English surface-analysis
+- [x] I approve the independently authored V0.1 natural-English surface-analysis
   scope and confirm that no private Parser V2 implementation is being released.
-- [ ] I approve contract `1.1.0`, including its closed categories, no-echo
+- [x] I approve contract `1.1.0`, including its closed categories, no-echo
   privacy boundary, and continued SgSL-output prohibition.
-- [ ] I approve the current public claims and limitations as accurate for a
+- [x] I approve the current public claims and limitations as accurate for a
   surface analyzer with no SgSL grammar rules.
-- [ ] I confirm that the Apache-2.0 and ViaSign/Viathorne brand-use decisions
+- [x] I confirm that the Apache-2.0 and ViaSign/Viathorne brand-use decisions
   approved for V1 remain acceptable for this changed candidate.
-- [ ] I approve the final path-and-hash manifest as the only input to a future
+- [x] I approve the final path-and-hash manifest as the only input to the
   V2 commit.
 
 Record any decision in an ignored local file so the act of recording approval
 does not change the approved candidate fingerprint. Do not add a personal email,
 signature image, identity document, or reviewer identity to the public tree.
 
-Approval of this packet would authorize only preparation of a clean local V2
-commit. It would not authorize pushing, publication, deployment, production
-CORS, public traffic, or submissions.
+Approval of this packet authorized preparation of the clean V2 commit. A later
+explicit decision authorized pushing and source publication. Neither source
+decision authorized Render deployment, production CORS, public traffic, or
+submissions; those remain separately gated.

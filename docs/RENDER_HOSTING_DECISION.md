@@ -1,15 +1,17 @@
 # Render Hosting Decision
 
-- **Status:** Provider selected; deployment blocked
+- **Status:** Inert Blueprint sync approved; public activation blocked
 - **Recorded:** 2026-07-12
 - **Provider:** Render
 - **Owner-reported workspace plan:** Pro
 - **Planned service region:** Singapore
 - **Planned service instance:** Starter, one public web service
 
-This record selects Render for configuration work only. It does not approve a
-Blueprint sync, initial deploy, public repository publication, custom domain,
-CORS enablement, preview environment, or visitor traffic.
+The repository owner approved one inert Blueprint sync and service creation on
+2026-07-13. That approval is limited to the checked-in configuration:
+maintenance mode on, empty CORS, automatic deploys off, one Starter instance,
+and no website connection or DNS change. It does not approve production CORS,
+maintenance-mode removal, visitor traffic, or submissions.
 
 ## Why Render fits this stage
 
@@ -126,8 +128,10 @@ Official references:
 
 ## Custom domain and TLS
 
-The intended production name is `api.viathorne.com`. It is declared only in the
-inert Blueprint and is not configured in Render or DNS.
+The intended production name is `api.viathorne.com`. The inert Blueprint may
+register it in Render because disabling the default Render subdomain requires a
+custom domain. This gate does not authorize a DNS change, so the name must not
+route public traffic yet.
 Render automatically manages TLS for custom domains and redirects their HTTP
 traffic to HTTPS. The Blueprint disables the default `onrender.com` address once
 the custom domain is active; live verification must confirm it returns `404`
@@ -140,7 +144,8 @@ Official references:
 
 ## Remaining blockers
 
-- [ ] Publish or otherwise provide a reviewed public repository artifact.
+- [x] Publish the reviewed repository artifact at
+  `https://github.com/Viathorne-Labs/viasign-parser`, commit `e9e2f94`.
 - [x] Pin the Python base image by multi-platform digest, build it locally, and
   pass the local container smoke boundary.
 - [x] Complete the local container vulnerability, secret, and configuration
@@ -163,6 +168,7 @@ Official references:
 - [ ] Capture live domain, health, notification, metric, log, and rollback
   evidence after an explicitly approved inert Blueprint sync.
 - [ ] Complete assistive-technology and Deaf/SgSL review.
-- [ ] Record an explicit Blueprint-sync and deployment decision.
+- [x] Record explicit approval for one inert Blueprint sync and service
+  creation; activation remains unapproved.
 
 Until those items are complete, maintenance mode and empty CORS must remain.
