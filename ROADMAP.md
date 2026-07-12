@@ -55,7 +55,7 @@
 - [x] Define the public artifact, route, CORS, logging, retention, edge,
   accessibility, review, rollout, and rollback gates.
 - [x] Pin the website to response schema `viasign.parser.response.v1` and
-  advance the prepublication contract pin to `1.1.0` for closed surface analysis.
+  advance the public contract pin to `1.1.0` for closed surface analysis.
 - [x] Disable non-allowlisted runtime documentation routes and add no-store and
   nosniff response headers.
 - [x] Select Render, Singapore, and document Pro request-log behavior and
@@ -78,11 +78,15 @@
   a 4 KiB Blueprint edge rule; add a three-second fail-closed application
   deadline, keep early body rejection, freeze monitoring and rollback, and
   reject remote previews for V1.
+- [x] Publish the reviewed V2 source and the disabled website tester boundary.
+- [x] Record a separate owner decision approving one inert Blueprint sync and
+  service creation without DNS, CORS, website, or maintenance-mode activation.
 - [ ] Capture live Render health, domain, notification, metric, log, and rollback
   evidence only after a separately approved inert Blueprint sync.
 - [ ] Complete protected-preview privacy, assistive-technology, and Deaf/SgSL
   review.
-- [ ] Record a separate explicit deployment decision.
+- [x] Record the inert service-creation decision; keep public activation
+  separately blocked.
 
 ## Stage 3: Public benchmark suite
 
@@ -102,11 +106,13 @@
   manifest and record it outside the immutable candidate.
 - [x] Prepare the license, NOTICE/trademark, claims, privacy, and prototype-limit
   review packet without inferring owner approval.
-- [x] Remove submitted text from the prepublication response contract and replace
+- [x] Remove submitted text from the public response contract and replace
   default validation details with generic fail-closed errors; retain only
   non-sensitive input mode metadata.
 - [x] Create and verify a clean public root commit from only manifest-listed paths;
   never copy the local `.git` object store.
-- [ ] Obtain repository-owner approval of the changed surface-analysis candidate.
-- Review documentation and OpenAPI descriptions.
-- Publish only after an explicit release decision.
+- [x] Obtain repository-owner approval of the changed surface-analysis candidate.
+- [x] Review the V2 documentation and publish the approved source at
+  `https://github.com/Viathorne-Labs/viasign-parser`.
+- [ ] Publish the reconciled release and inert-deployment record before syncing
+  the Render Blueprint.

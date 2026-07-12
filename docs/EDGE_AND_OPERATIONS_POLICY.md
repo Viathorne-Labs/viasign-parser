@@ -1,14 +1,15 @@
 # Edge and Operations Policy
 
-- **Status:** Design frozen; activation and live evidence blocked
+- **Status:** Inert service creation approved; activation and live evidence blocked
 - **Recorded:** 2026-07-12
 - **Operational owner:** Repository owner
 - **Public service model:** One stateless Render web-service instance
 
 This record closes the configuration-design portion of the Render edge and
-operations gate. It does not approve a Blueprint sync, service creation,
-custom-domain change, public repository publication, remote preview, public
-traffic, commit, or push.
+operations gate. On 2026-07-13 the repository owner approved one inert Blueprint
+sync and service creation. That approval does not include DNS changes,
+production CORS, website connection, maintenance-mode removal, remote previews,
+public traffic, or submissions.
 
 ## Provider findings and honest limits
 
@@ -114,8 +115,8 @@ Each step requires evidence before the next:
 
 1. Approve a clean public commit and repeat tests, dependency audit, provenance
    checks, and exact-image security scans.
-2. Explicitly approve the Blueprint sync. Create the service with maintenance
-   mode on, empty CORS, one instance, and automatic deploys off.
+2. Use the recorded approval to create one inert service with maintenance mode
+   on, empty CORS, one instance, and automatic deploys off. Do not change DNS.
 3. Verify `api.viathorne.com` TLS and HTTPS redirection, and verify the default
    `onrender.com` hostname returns `404` without reaching the application.
 4. Verify health checks, failure notifications, metrics, request logs, region,

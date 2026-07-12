@@ -5,9 +5,10 @@
 - **Canonical website origin:** `https://www.viathorne.com`
 - **Intended API origin:** `https://api.viathorne.com`
 
-This record fixes the browser origin boundary before any Render deployment or
-website API enablement. It does not approve a Blueprint sync, custom domain,
-preview, public traffic, repository publication, commit, or push.
+This record fixes the browser origin boundary before any website API enablement.
+It does not itself approve DNS, production CORS, maintenance-mode removal,
+public traffic, or submissions. The separately recorded inert service approval
+does not change these activation blocks.
 
 ## Exact production values
 

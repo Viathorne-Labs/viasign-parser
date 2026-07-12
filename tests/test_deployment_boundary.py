@@ -49,14 +49,15 @@ def test_production_origin_policy_is_exact_and_not_activated() -> None:
     assert 'key: VIASIGN_CORS_ORIGINS\n        value: ""' in blueprint
 
 
-def test_edge_and_operations_policy_keeps_preview_and_activation_blocked() -> None:
+def test_edge_and_operations_policy_keeps_public_activation_blocked() -> None:
     policy = (REPOSITORY_ROOT / "docs/EDGE_AND_OPERATIONS_POLICY.md").read_text(
         encoding="utf-8"
     )
 
     assert "V1 will not use a remote Render service preview" in policy
     assert "three-second total application deadline" in policy
-    assert "does not approve a Blueprint sync" in policy
+    assert "approved one inert Blueprint" in policy
+    assert "sync and service creation" in policy
     assert "Maintenance mode and empty CORS must remain" in policy
     assert "`review_required=true`" in policy
     assert "`motion_ready=false`" in policy

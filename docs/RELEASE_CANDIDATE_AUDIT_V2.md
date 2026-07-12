@@ -1,14 +1,16 @@
 # Release Candidate Audit V2
 
-- **Status:** Local technical gate passed; owner approval and publication blocked
+- **Status:** Owner-approved source published; hosting activation blocked
 - **Reviewed:** 2026-07-13
-- **Candidate:** `viasign-parser-public-v2-surface-prepublication`
+- **Candidate:** `viasign-parser-public-v2-surface-published`
 - **Parent clean commit:** `07c835ca279ea1792b29f53630062e816e3ec282`
+- **Published commit:** `e9e2f94b2b3f5e22c9be4a29026e00f3b9ffb693`
 - **Manifest:** `provenance/v1/release-candidate-manifest.json`
 
 This audit covers the independently authored natural-English surface analyzer
-and contract `1.1.0`. It does not authorize a commit, remote, publication,
-deployment, production CORS, public traffic, or linguistic claims.
+and contract `1.1.0` published at
+`https://github.com/Viathorne-Labs/viasign-parser`. Publication did not authorize
+Render deployment, production CORS, public traffic, or linguistic claims.
 
 ## Change boundary
 
@@ -66,7 +68,8 @@ deployment safety.
 
 ## Remaining gates
 
-- Obtain repository-owner approval through `docs/OWNER_REVIEW_PACKET_V2.md`.
-- Create a local V2 commit only after approval.
-- Make separate decisions for pushing, publication, Render deployment,
-  production CORS, and public activation.
+- Publish this reconciled manifest and deployment record before creating cloud
+  infrastructure.
+- Create and verify only the separately approved inert Render service.
+- Make later, separate decisions for DNS activation, production CORS, website
+  connection, public traffic, and submissions.

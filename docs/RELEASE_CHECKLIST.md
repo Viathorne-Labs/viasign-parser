@@ -1,18 +1,18 @@
 # Public Release Checklist
 
-No public release is approved yet.
+The reviewed V2 source is public. Hosting activation is not approved.
 
 ## Source
 
-- [x] Every local candidate path appears in the deterministic path-and-SHA-256
-  manifest; approval of the changed V2 candidate remains open.
-- [x] The candidate excludes `.git`; the future public repository must be
-  created only from manifest-listed paths.
+- [x] Every candidate path appears in the deterministic path-and-SHA-256
+  manifest.
+- [x] The published history was created only from manifest-listed paths and did
+  not copy the private or candidate `.git` object stores.
 - [x] No excluded package, import, asset, document, or generated file is present
   in the local candidate.
 - [x] No migrated private code is shipped; future migrations remain blocked by
   the provenance gate.
-- [ ] Repository owner approves the exact V2 candidate manifest.
+- [x] Repository owner approved the exact V2 candidate manifest.
 
 ## Language data
 
@@ -50,11 +50,20 @@ No public release is approved yet.
   public parser implements SgSL grammar, translation, or motion.
 - [x] Apache-2.0 text, current SPDX metadata, NOTICE, packaged license files, and
   trademark boundaries remain unchanged from the approved V1 scope.
-- [ ] Repository owner completes `docs/OWNER_REVIEW_PACKET_V2.md` explicitly.
-- [ ] A separate explicit release approval has been recorded.
+- [x] Repository owner completed `docs/OWNER_REVIEW_PACKET_V2.md` explicitly.
+- [x] A separate explicit source-publication approval was recorded and commit
+  `e9e2f94b2b3f5e22c9be4a29026e00f3b9ffb693` was published.
 
 ## Hosting
 
-Source release does not authorize a hosted service. Before hosting, complete
-every item in `docs/PRODUCTION_DEPLOYMENT_GATE.md` and record a separate explicit
-deployment approval.
+Source release did not authorize hosting. On 2026-07-13, the repository owner
+separately approved one inert Blueprint sync and service creation with
+maintenance mode on, empty CORS, automatic deploys off, no DNS change, and no
+website connection.
+
+- [x] Inert Blueprint sync and service creation approved.
+- [ ] Reconciled release and deployment records are published before the sync.
+- [ ] Live domain, health, notification, metric, log, and rollback evidence is
+  captured from the inert service.
+- [ ] Production CORS, website connection, maintenance-mode removal, public
+  traffic, and submissions receive separate explicit approvals.

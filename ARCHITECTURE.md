@@ -1,7 +1,7 @@
 # ViaSign Parser Public Architecture
 
-- **Status:** Public pre-alpha boundary
-- **Last updated:** 2026-07-12
+- **Status:** Published pre-alpha boundary; hosted activation blocked
+- **Last updated:** 2026-07-13
 - **Repository:** `viasign-parser`
 
 ## Purpose
@@ -147,10 +147,11 @@ No private implementation candidate is approved for direct copying. The public
 parser, transport, tests, schemas, fixtures, and documentation are independently
 authored from the public contract and boundary requirements.
 
-The exact prepublication artifact is selected by a deterministic path-and-hash
-manifest. `.git`, virtual environments, caches, build output, and `*.local.md`
-coordination notes are excluded. A future public repository must be created only
-from manifest-listed paths and must never copy the local Git object store.
+The published V2 source began from a deterministic path-and-hash manifest and a
+clean history created only from allowlisted files. `.git`, virtual environments,
+caches, build output, and `*.local.md` coordination notes remain excluded from
+every release projection. Public updates must never import private Git history
+or copy a private/local Git object store.
 
 ## Documentation roles
 

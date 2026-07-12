@@ -1,5 +1,5 @@
 {
-  "candidate_id": "viasign-parser-public-v2-surface-prepublication",
+  "candidate_id": "viasign-parser-public-v2-surface-published",
   "deployment_authorized": false,
   "files": [
     {
@@ -23,9 +23,9 @@
       "sha256": "71a717968e682d5579951ffca77dc37f15d382326bb336f509bce5aa50b9c462"
     },
     {
-      "bytes": 8219,
+      "bytes": 8296,
       "path": "ARCHITECTURE.md",
-      "sha256": "5c3ddda3f1196f7f29f96970224d3aecd082b7d4749aa569a955708efdcf0a3f"
+      "sha256": "252c669776428f45de9eaa99ba82e4aadefc91dcf30b49c660968a7fe01489c0"
     },
     {
       "bytes": 541,
@@ -53,14 +53,14 @@
       "sha256": "c1c94c015afd9b438104cfb05b250aa88e0b582fb0d495db83dd53d8b7c6c85c"
     },
     {
-      "bytes": 4979,
+      "bytes": 5401,
       "path": "README.md",
-      "sha256": "cc8512e6b81e32a92ada57f52976d4293c379b353920c2e1092007e598087a5a"
+      "sha256": "cb0c3f7765235cd26bdcc535993e6a7089e11f364c7a07b4a35d6a00fb6a64d8"
     },
     {
-      "bytes": 5969,
+      "bytes": 6357,
       "path": "ROADMAP.md",
-      "sha256": "058e4ea0910efdb4a5d45afd3a373e145e60f4a6db2e7153ffdde7fab8bf4df8"
+      "sha256": "c9804501b51aa4aee6cbca1b0528da2d3684e44410d8199e1a970c150e35abcc"
     },
     {
       "bytes": 626,
@@ -93,9 +93,9 @@
       "sha256": "cbc09b20c4245133a9cc063356b1bcd4c244ba4ca7791ae7b26a85af035244a4"
     },
     {
-      "bytes": 7273,
+      "bytes": 7395,
       "path": "docs/EDGE_AND_OPERATIONS_POLICY.md",
-      "sha256": "b74ce989ae787a94ae7dcbd448e84889dc0828cc6c2728abc3dfdb973c7d915e"
+      "sha256": "b51fa5c82189976715375440ce07407b7f5651b7d0132dd88df922f0cc822485"
     },
     {
       "bytes": 3468,
@@ -103,9 +103,9 @@
       "sha256": "22bc18d767ec76766694b49c2ce555c62cbb2cb47adc943daa1301b1226b55f6"
     },
     {
-      "bytes": 3028,
+      "bytes": 3083,
       "path": "docs/ORIGIN_AND_CSP_POLICY.md",
-      "sha256": "1fb23fbc5e38eccc8852eaafb3270c169c04cd40de900dc2ceb5672c7c95204f"
+      "sha256": "e439702c45e79df24bf15a1cfaac7ab0d4162de95e6f9f226b5cfb4fb2ecfe36"
     },
     {
       "bytes": 4998,
@@ -113,19 +113,19 @@
       "sha256": "9b4decfd08de228155c138315dffa85f0ebef35557590fdae6936990a371d070"
     },
     {
-      "bytes": 4825,
+      "bytes": 5161,
       "path": "docs/OWNER_REVIEW_PACKET_V2.md",
-      "sha256": "2d000bafe2988b31c46d5afc11345347b5b07d6608f9bac37c523b2eb12af496"
+      "sha256": "dd670986bb83a727ece8c93d99f8a40b29703e93c2ee208dc059c277c513b25e"
     },
     {
-      "bytes": 3324,
+      "bytes": 3309,
       "path": "docs/PARSER_RESPONSE_CONTRACT_V1.md",
-      "sha256": "07c459438c8cd40933ded3a8ff3dcc7bcd1e01fe0e025916e86375fda4d226e1"
+      "sha256": "4589440a182f82c3ce322d92e070d836dfe4757a4e7e8fc36ba6fa4f8d9ce135"
     },
     {
-      "bytes": 8016,
+      "bytes": 8404,
       "path": "docs/PRODUCTION_DEPLOYMENT_GATE.md",
-      "sha256": "d1d9ebb5851ef91cbb5aa439f9274db62b4971aaa5286aef829f88b6d66a0034"
+      "sha256": "943846c6f8945a31e1c25001d61e32c2e6aa0abf67d44b4399a5efc16a1c128a"
     },
     {
       "bytes": 5749,
@@ -148,19 +148,19 @@
       "sha256": "0a4a7e5d58e31100ef8cc4a307df97ea226cab0c09e123ea16cd681ebdd6c165"
     },
     {
-      "bytes": 3475,
+      "bytes": 3632,
       "path": "docs/RELEASE_CANDIDATE_AUDIT_V2.md",
-      "sha256": "9e596e428889055ab490a1c521ca5cc4e63d3364d709260570a8a25f4500d880"
+      "sha256": "4b7f2305c8ff851c43fa4750879fe141341e72890e3d9b2490d50d4b0afbdeca"
     },
     {
-      "bytes": 2636,
+      "bytes": 3170,
       "path": "docs/RELEASE_CHECKLIST.md",
-      "sha256": "331c81529f2546c224dbf6e8f44c9f128a65ee1dcba2950906220c90b90262c0"
+      "sha256": "ff5ab8aea3e736133958d860a9e6acc8545a3f70c82e68133929e0d1d62bc9cc"
     },
     {
-      "bytes": 7381,
+      "bytes": 7774,
       "path": "docs/RENDER_HOSTING_DECISION.md",
-      "sha256": "35e53da70d66203f399ae1d2d256df084cd183782d3eaee1292d62173d1e99d3"
+      "sha256": "67d2860878f8758ccae1153c0fd0a68493b9bba0aeebe7609694763db24fe800"
     },
     {
       "bytes": 3231,
@@ -203,9 +203,9 @@
       "sha256": "bce6a0a6173d4c2180527b1b7a1e5c86ee96e2d313e4ebd1e07b8cab02b404f6"
     },
     {
-      "bytes": 4977,
+      "bytes": 5293,
       "path": "scripts/release_manifest.py",
-      "sha256": "03c1a06ee3179e103c8225718142557bc4193110e701f8af81878a46f7c7140e"
+      "sha256": "e561214263d9995ba2ed41dac045e6332371bc6eb50764227f4ea5e5160a9955"
     },
     {
       "bytes": 122,
@@ -313,9 +313,9 @@
       "sha256": "9330d25d1578f647d6cc37cece8f7715a43063f8bf2289f45acbe1a234160c00"
     },
     {
-      "bytes": 3272,
+      "bytes": 3311,
       "path": "tests/test_deployment_boundary.py",
-      "sha256": "a4164f6d48c33251abfac688efc90de8737aecbba501a183c21c7a7eb9a80cd5"
+      "sha256": "0f7cf9698e6d5239bf656176cce923b1d89b8af64315348c7187ec02e5999577"
     },
     {
       "bytes": 3449,
@@ -328,9 +328,9 @@
       "sha256": "1362db4ed3b93c8d09312cafa65c1a61c21cc83f16291ea9f71a42b22493d7f3"
     },
     {
-      "bytes": 2338,
+      "bytes": 2709,
       "path": "tests/test_release_candidate.py",
-      "sha256": "d64606f80bc0fb8b443ba829761658164fdc49f56d77bfcb08b687166aeba3da"
+      "sha256": "80653d9b5eac6d4dc4cf10b93af6f29d0d182a3cc94c5c1403dc7a248fe0cbc6"
     },
     {
       "bytes": 681,
@@ -349,19 +349,26 @@
     }
   ],
   "hash_algorithm": "sha256",
+  "inert_service_creation_authorized": true,
   "manifest_self_hashed": false,
   "manifest_self_path": "provenance/v1/release-candidate-manifest.json",
   "manifest_version": "viasign.public-release-manifest.v1",
-  "publication_authorized": false,
+  "public_activation_authorized": false,
+  "publication_authorized": true,
+  "published_source": {
+    "branch": "main",
+    "commit": "e9e2f94b2b3f5e22c9be4a29026e00f3b9ffb693",
+    "repository": "https://github.com/Viathorne-Labs/viasign-parser"
+  },
   "required_invariants": {
     "motion_ready": false,
     "review_required": true
   },
   "root": ".",
   "snapshot_date": "2026-07-13",
-  "status": "local_prepublication_candidate",
+  "status": "published_source_inert_service_approved",
   "summary": {
     "file_count": 69,
-    "total_bytes": 221157
+    "total_bytes": 224740
   }
 }

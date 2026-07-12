@@ -35,14 +35,21 @@ def test_private_local_markdown_notes_are_excluded(tmp_path) -> None:
     assert collect_release_files(tmp_path) == ()
 
 
-def test_release_manifest_is_exact_and_keeps_release_blocked() -> None:
+def test_release_manifest_records_publication_and_blocks_activation() -> None:
     check_manifest()
     manifest = json.loads((ROOT / MANIFEST_RELATIVE_PATH).read_text(encoding="utf-8"))
     generated = build_manifest()
 
     assert manifest == generated
-    assert manifest["publication_authorized"] is False
+    assert manifest["publication_authorized"] is True
     assert manifest["deployment_authorized"] is False
+    assert manifest["inert_service_creation_authorized"] is True
+    assert manifest["public_activation_authorized"] is False
+    assert manifest["published_source"] == {
+        "repository": "https://github.com/Viathorne-Labs/viasign-parser",
+        "branch": "main",
+        "commit": "e9e2f94b2b3f5e22c9be4a29026e00f3b9ffb693",
+    }
     assert manifest["required_invariants"] == {
         "review_required": True,
         "motion_ready": False,
@@ -66,9 +73,9 @@ def test_package_uses_current_spdx_and_includes_public_notices() -> None:
     )
 
 
-def test_changed_candidate_owner_review_remains_explicitly_unapproved() -> None:
+def test_changed_candidate_owner_review_records_source_approval_only() -> None:
     packet = (ROOT / "docs/OWNER_REVIEW_PACKET_V2.md").read_text(encoding="utf-8")
 
-    assert "owner approval not yet recorded" in packet
-    assert packet.count("- [ ] I ") == 5
-    assert "does not authorize" in packet
+    assert "Owner approval recorded; source published" in packet
+    assert packet.count("- [x] I ") == 5
+    assert "did not authorize Render deployment" in packet
