@@ -1,7 +1,7 @@
 # Production Deployment Gate
 
 - **Status:** Blocked; planning and local verification only
-- **Last reviewed:** 2026-07-12
+- **Last reviewed:** 2026-07-13
 - **Applies to:** The public `viasign-parser` HTTP service
 
 Render in Singapore is the selected provider and region. The provider-specific
@@ -42,9 +42,13 @@ upload, feedback, corpus, review-administration, and private-source routes are
 disabled. OpenAPI may still be generated offline for tests and release review.
 
 Every parse response must use schema `viasign.parser.response.v1`, contract
-`1.0.0`, `status=review_required`, `review_required=true`, and
+`1.1.0`, `status=review_required`, `review_required=true`, and
 `motion_ready=false`. The service returns `Cache-Control: no-store` on parse
 responses and `X-Content-Type-Options: nosniff` on public responses.
+
+The V0.1 surface analyzer may return only closed source-text categories. It must
+not return submitted text, tokens, names, fragments, SgSL order, glosses,
+identity fields, motion, or avatar data.
 
 ## Required controls before any public activation
 

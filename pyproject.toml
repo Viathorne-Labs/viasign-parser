@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "viasign-parser"
-version = "0.1.0"
-description = "Review-required, grammar-first ViaSign parser prototype"
+version = "0.2.0"
+description = "Review-required ViaSign surface-analysis prototype"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "Apache-2.0"

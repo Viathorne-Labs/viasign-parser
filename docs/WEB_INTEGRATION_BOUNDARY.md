@@ -22,7 +22,7 @@ internal development API.
 
 The testing interface must say clearly:
 
-- this is an early experimental grammar-planning prototype
+- this is an early experimental natural-English surface analyzer
 - output is not final or fluent SgSL translation
 - every result requires review
 - motion and avatar output are unavailable
@@ -56,9 +56,11 @@ The interface must show `outcome`, warnings, `review_required`, and
 - Pin the website to an explicit API contract version.
 
 The website must reject responses unless the schema is
-`viasign.parser.response.v1`, the contract is `1.0.0`, and the review and motion
-invariants remain literal. It must also reject a response whose input metadata
-contains a text field. The complete hosting checklist is in
+`viasign.parser.response.v1`, the contract is `1.1.0`, and the review and motion
+invariants remain literal. For ordinary analysis it accepts only the four
+closed surface categories, `sign_aware_form=null`, and an empty candidate-gloss
+list. It must reject response fields containing submitted text, extracted
+tokens, names, or fragments. The complete hosting checklist is in
 `docs/PRODUCTION_DEPLOYMENT_GATE.md`.
 
 The service reads:

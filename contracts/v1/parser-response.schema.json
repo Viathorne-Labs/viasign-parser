@@ -5,7 +5,7 @@
       "description": "Identifies the implementation and ruleset that produced a response.",
       "properties": {
         "contract_version": {
-          "const": "1.0.0",
+          "const": "1.1.0",
           "title": "Contract Version",
           "type": "string"
         },
@@ -176,10 +176,14 @@
             }
           ],
           "title": "Sign Aware Form"
+        },
+        "surface": {
+          "$ref": "#/$defs/SurfaceAnalysis"
         }
       },
       "required": [
         "intent",
+        "surface",
         "sign_aware_form",
         "candidate_glosses"
       ],
@@ -204,6 +208,63 @@
         "mode"
       ],
       "title": "InputMetadata",
+      "type": "object"
+    },
+    "SurfaceAnalysis": {
+      "additionalProperties": false,
+      "description": "Closed, non-verbatim observations about natural-English input.",
+      "properties": {
+        "negation_cue": {
+          "enum": [
+            "present",
+            "absent",
+            "ambiguous"
+          ],
+          "title": "Negation Cue",
+          "type": "string"
+        },
+        "question_category": {
+          "enum": [
+            "what",
+            "who",
+            "whose",
+            "why",
+            "how",
+            "where",
+            "which",
+            "when",
+            "none"
+          ],
+          "title": "Question Category",
+          "type": "string"
+        },
+        "question_kind": {
+          "enum": [
+            "wh",
+            "yes_no",
+            "unknown",
+            "not_applicable"
+          ],
+          "title": "Question Kind",
+          "type": "string"
+        },
+        "sentence_kind": {
+          "enum": [
+            "statement",
+            "question",
+            "unknown"
+          ],
+          "title": "Sentence Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "sentence_kind",
+        "question_kind",
+        "question_category",
+        "negation_cue"
+      ],
+      "title": "SurfaceAnalysis",
       "type": "object"
     },
     "UncertainResponse": {

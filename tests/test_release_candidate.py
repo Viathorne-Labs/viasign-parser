@@ -66,8 +66,8 @@ def test_package_uses_current_spdx_and_includes_public_notices() -> None:
     )
 
 
-def test_owner_review_remains_explicitly_unapproved() -> None:
-    packet = (ROOT / "docs/OWNER_REVIEW_PACKET_V1.md").read_text(encoding="utf-8")
+def test_changed_candidate_owner_review_remains_explicitly_unapproved() -> None:
+    packet = (ROOT / "docs/OWNER_REVIEW_PACKET_V2.md").read_text(encoding="utf-8")
 
     assert "owner approval not yet recorded" in packet
     assert packet.count("- [ ] I ") == 5

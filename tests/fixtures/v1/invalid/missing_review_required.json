@@ -7,6 +7,12 @@
   },
   "analysis": {
     "intent": "question",
+    "surface": {
+      "sentence_kind": "question",
+      "question_kind": "yes_no",
+      "question_category": "none",
+      "negation_cue": "absent"
+    },
     "sign_aware_form": null,
     "candidate_glosses": []
   },
@@ -16,6 +22,6 @@
     "parser_id": "viasign-parser",
     "parser_version": "contract-fixture",
     "ruleset_version": "not-implemented",
-    "contract_version": "1.0.0"
+    "contract_version": "1.1.0"
   }
 }

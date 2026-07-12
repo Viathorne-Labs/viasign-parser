@@ -46,9 +46,10 @@ class MetaResponse(StrictModel):
     api_version: Literal["v1"] = "v1"
     maturity: Literal["pre-alpha"] = "pre-alpha"
     parser_available: Literal[True] = True
+    surface_analysis_available: Literal[True] = True
     grammar_rules_available: Literal[False] = False
-    parser_version: Literal["0.1.0"] = "0.1.0"
-    ruleset_version: Literal["public-safety-only-v1"] = "public-safety-only-v1"
+    parser_version: Literal["0.2.0"] = "0.2.0"
+    ruleset_version: Literal["public-surface-only-v1"] = "public-surface-only-v1"
     review_required: Literal[True] = True
     motion_ready: Literal[False] = False
 

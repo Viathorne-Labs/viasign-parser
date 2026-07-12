@@ -120,8 +120,8 @@ def build_manifest(root: Path = ROOT) -> dict[str, object]:
 
     return {
         "manifest_version": "viasign.public-release-manifest.v1",
-        "candidate_id": "viasign-parser-public-v1-prepublication",
-        "snapshot_date": "2026-07-12",
+        "candidate_id": "viasign-parser-public-v2-surface-prepublication",
+        "snapshot_date": "2026-07-13",
         "status": "local_prepublication_candidate",
         "hash_algorithm": "sha256",
         "root": ".",

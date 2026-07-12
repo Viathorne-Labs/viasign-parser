@@ -29,6 +29,19 @@
 - [x] Return visible uncertainty while public SgSL grammar rules remain unavailable.
 - [x] Block name-sign generation with no analysis fallback.
 
+## Stage 2C: Clean-room surface analyzer
+
+- [x] Re-audit private Parser V2 at capability level without editing, copying,
+  importing, or translating private files.
+- [x] Define contract `1.1.0` with closed, non-verbatim natural-English surface
+  categories.
+- [x] Implement sentence, question, question-category, and negation-cue analysis
+  independently from the public contract and new synthetic tests.
+- [x] Keep SgSL order and gloss output unavailable.
+- [x] Make the website reject free-form or extracted surface values.
+- [ ] Obtain Deaf/SgSL and assistive-technology review before introducing any
+  public SgSL-aware rule.
+
 ## Stage 2A: Public website integration preparation
 
 - [x] Freeze the `viathorne-web -> public FastAPI -> public parser` boundary.
@@ -42,7 +55,7 @@
 - [x] Define the public artifact, route, CORS, logging, retention, edge,
   accessibility, review, rollout, and rollback gates.
 - [x] Pin the website to response schema `viasign.parser.response.v1` and
-  contract `1.0.0`.
+  advance the prepublication contract pin to `1.1.0` for closed surface analysis.
 - [x] Disable non-allowlisted runtime documentation routes and add no-store and
   nosniff response headers.
 - [x] Select Render, Singapore, and document Pro request-log behavior and
@@ -85,13 +98,15 @@
 - [x] Run first-party and Trivy secret, binary, provenance, dependency-license,
   local-path, Dockerfile, container, and private-import scans; record the
   time-bounded evidence in `docs/RELEASE_CANDIDATE_AUDIT_V1.md`.
-- [ ] Obtain repository-owner approval of the exact candidate manifest.
+- [x] Obtain repository-owner approval of the initial safety-only candidate
+  manifest and record it outside the immutable candidate.
 - [x] Prepare the license, NOTICE/trademark, claims, privacy, and prototype-limit
   review packet without inferring owner approval.
 - [x] Remove submitted text from the prepublication response contract and replace
   default validation details with generic fail-closed errors; retain only
   non-sensitive input mode metadata.
-- [ ] Create and verify a clean public commit from only manifest-listed paths;
+- [x] Create and verify a clean public root commit from only manifest-listed paths;
   never copy the local `.git` object store.
+- [ ] Obtain repository-owner approval of the changed surface-analysis candidate.
 - Review documentation and OpenAPI descriptions.
 - Publish only after an explicit release decision.

@@ -1,5 +1,10 @@
 # Release Candidate Audit V1
 
+> Historical record: this audit describes the initial safety-only candidate
+> before clean root commit `07c835ca279ea1792b29f53630062e816e3ec282`. See
+> `docs/RELEASE_CANDIDATE_AUDIT_V2.md` for the changed surface-analysis
+> candidate.
+
 - **Status:** Local technical gate passed; owner approval and publication blocked
 - **Reviewed:** 2026-07-12
 - **Candidate:** `viasign-parser-public-v1-prepublication`

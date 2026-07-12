@@ -81,6 +81,15 @@ successful, unsupported, malformed, and validation-error responses do not
 return the submitted sentence, while the safety invariants, non-root runtime,
 disabled documentation route, and fail-closed `413` boundary remain intact.
 
+After the clean-room surface analyzer and contract `1.1.0` were added, fresh
+Linux arm64 and Linux amd64 images were rebuilt. Runtime smoke checks confirmed
+the four closed surface categories, no sign-aware form or candidate glosses,
+no submitted-value echo, the name-sign block, generic validation errors,
+non-root UID `10001`, disabled documentation, and fail-closed `413` behavior.
+Trivy 0.72.0 refreshed its database and again reported zero Alpine and
+Python-package vulnerabilities for both images, no embedded-secret finding,
+and zero Dockerfile misconfigurations.
+
 ## Release rule
 
 Immediately before any deployment:

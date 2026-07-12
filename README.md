@@ -1,7 +1,7 @@
 # ViaSign Parser
 
-ViaSign Parser is a clean public boundary for an early, grammar-first safety
-prototype intended to support future SgSL-aware planning research.
+ViaSign Parser is a clean public boundary for an early, review-required surface
+analyzer intended to support future SgSL-aware planning research.
 
 It is not a finished SgSL translator, an interpreter, a linguistic authority,
 or a motion/avatar system. It must not be used for certified, emergency, legal,
@@ -12,9 +12,8 @@ or medical communication.
 No private parser implementation or benchmark data has been migrated.
 
 The provenance gate found mixed private/review lineage in the previous parser
-and lexicon, so direct copying is blocked. The next parser will be a smaller
-clean-room public implementation built from this repository's contracts and
-cleared public fixtures.
+and lexicon, so direct copying remains blocked. This parser is an independent,
+smaller implementation built from public contracts and synthetic fixtures.
 
 The versioned request and response contracts now exist with independently
 authored structural fixtures. They validate contract behavior only and are not
@@ -26,13 +25,16 @@ The first clean-room public parser intentionally exposes its limitations:
 review_required = true
 motion_ready = false
 parser_available = true
+surface_analysis_available = true
 grammar_rules_available = false
 ```
 
-`POST /v1/parse` returns an `uncertain` response with no proposed signing for
-ordinary input. Name-sign generation requests return `unsupported` with no
-analysis. Responses include only non-sensitive input mode metadata and never
-echo the submitted sentence. No SgSL grammar rules have been added yet.
+`POST /v1/parse` returns an `uncertain` response with closed natural-English
+surface categories and no proposed signing for ordinary input. It can label
+sentence kind, question kind, a generic question category, and a negation cue.
+These observations are not SgSL grammar. Name-sign generation requests return
+`unsupported` with no analysis. Responses never echo the submitted sentence,
+tokens, names, or fragments. No SgSL grammar rules have been added yet.
 
 ## Local development
 
@@ -94,7 +96,9 @@ those values.
 - [Origin and Content Security Policy](docs/ORIGIN_AND_CSP_POLICY.md)
 - [Edge and operations policy](docs/EDGE_AND_OPERATIONS_POLICY.md)
 - [Release candidate audit V1](docs/RELEASE_CANDIDATE_AUDIT_V1.md)
+- [Release candidate audit V2](docs/RELEASE_CANDIDATE_AUDIT_V2.md)
 - [Repository owner review packet V1](docs/OWNER_REVIEW_PACKET_V1.md)
+- [Repository owner review packet V2](docs/OWNER_REVIEW_PACKET_V2.md)
 - [Third-party dependency review](docs/THIRD_PARTY_DEPENDENCY_REVIEW.md)
 - [Container security review](docs/CONTAINER_SECURITY_REVIEW.md)
 - [Anonymous pilot rate-limit policy](docs/RATE_LIMIT_POLICY.md)

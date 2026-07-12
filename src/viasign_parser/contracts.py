@@ -14,7 +14,7 @@ from .api_models import StrictModel
 
 
 SCHEMA_VERSION = "viasign.parser.response.v1"
-CONTRACT_VERSION = "1.0.0"
+CONTRACT_VERSION = "1.1.0"
 
 InputMode = Literal["natural", "source_gloss", "unknown"]
 Intent = Literal[
@@ -24,6 +24,20 @@ Intent = Literal[
     "name_sign_request",
     "unknown",
 ]
+SentenceKind = Literal["statement", "question", "unknown"]
+QuestionKind = Literal["wh", "yes_no", "unknown", "not_applicable"]
+QuestionCategory = Literal[
+    "what",
+    "who",
+    "whose",
+    "why",
+    "how",
+    "where",
+    "which",
+    "when",
+    "none",
+]
+NegationCue = Literal["present", "absent", "ambiguous"]
 CandidateGloss = Annotated[
     str,
     Field(min_length=1, max_length=100, pattern=r"^[A-Z0-9][A-Z0-9_()/-]*$"),
@@ -52,10 +66,20 @@ class UnsupportedReason(StrictModel):
     message: str = Field(min_length=1, max_length=500)
 
 
+class SurfaceAnalysis(StrictModel):
+    """Closed, non-verbatim observations about natural-English input."""
+
+    sentence_kind: SentenceKind
+    question_kind: QuestionKind
+    question_category: QuestionCategory
+    negation_cue: NegationCue
+
+
 class GrammarAnalysis(StrictModel):
     """Draft grammar-planning fields, never approved translation output."""
 
     intent: Intent
+    surface: SurfaceAnalysis
     sign_aware_form: str | None = Field(max_length=2_000)
     candidate_glosses: list[CandidateGloss] = Field(max_length=128)
 

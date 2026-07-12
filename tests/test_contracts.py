@@ -87,6 +87,31 @@ def test_response_schema_contains_no_submitted_text_field() -> None:
     assert input_metadata["additionalProperties"] is False
 
 
+def test_surface_schema_contains_only_closed_non_verbatim_categories() -> None:
+    schema = _load(CONTRACT_ROOT / "parser-response.schema.json")
+    surface = schema["$defs"]["SurfaceAnalysis"]
+
+    assert set(surface["properties"]) == {
+        "sentence_kind",
+        "question_kind",
+        "question_category",
+        "negation_cue",
+    }
+    assert set(surface["required"]) == set(surface["properties"])
+    assert surface["additionalProperties"] is False
+
+    schema_text = json.dumps(surface)
+    for forbidden_field in (
+        "text",
+        "token",
+        "name",
+        "fragment",
+        "gloss",
+        "sign_aware_form",
+    ):
+        assert f'"{forbidden_field}"' not in schema_text
+
+
 def test_request_schema_is_strict_and_bounded() -> None:
     schema = _load(CONTRACT_ROOT / "parse-request.schema.json")
     assert schema["additionalProperties"] is False

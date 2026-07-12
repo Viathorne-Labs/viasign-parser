@@ -1,6 +1,6 @@
 {
   "schema_version": "viasign.parser.response.v1",
-  "outcome": "draft",
+  "outcome": "uncertain",
   "status": "review_required",
   "input": {
     "mode": "natural"
@@ -10,13 +10,21 @@
     "surface": {
       "sentence_kind": "question",
       "question_kind": "wh",
-      "question_category": "which",
-      "negation_cue": "absent"
+      "question_category": "where",
+      "negation_cue": "absent",
+      "extracted_tokens": ["PRIVATE", "PLACE"]
     },
     "sign_aware_form": null,
     "candidate_glosses": []
   },
-  "warnings": [],
+  "warnings": [
+    {
+      "code": "sgsl_grammar_rules_unavailable",
+      "message": "Surface categories are not SgSL grammar, translation, or signing output.",
+      "field": "analysis",
+      "review_state": "review_required"
+    }
+  ],
   "review_required": true,
   "motion_ready": false,
   "provenance": {

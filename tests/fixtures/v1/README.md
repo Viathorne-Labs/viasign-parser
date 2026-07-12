@@ -1,7 +1,8 @@
 # Contract Fixture Provenance
 
 All fixtures in this directory were independently authored for structural
-contract testing in this clean public repository on 2026-07-12.
+contract testing in this clean public repository on 2026-07-12 and updated with
+closed surface categories on 2026-07-13.
 
 They were not copied from private ViaSign materials, lesson notes, teacher
 feedback, community submissions, benchmark banks, recordings, or source PDFs.
@@ -18,4 +19,4 @@ evidence that a grammar analysis is correct or fluent SgSL.
 | `invalid/missing_review_required.json` | Rejects a response missing the review invariant |
 | `invalid/uncertain_without_warning.json` | Rejects hidden uncertainty |
 | `invalid/unsupported_with_analysis.json` | Rejects plausible-looking analysis for unsupported input |
-
+| `invalid/surface_with_extracted_values.json` | Rejects extracted tokens or other free-form surface values |

@@ -1,6 +1,6 @@
 # Parser Response Contract V1
 
-Status: prepublication candidate; submitted text removed before first release
+Status: prepublication contract 1.1.0 candidate; no SgSL rules
 
 This contract defines public transport structure. It does not implement SgSL
 grammar and does not make its synthetic examples linguistically authoritative.
@@ -62,13 +62,31 @@ serialized as successful parser results.
 
 ## Analysis fields
 
-The first contract exposes only:
+Contract `1.1.0` exposes only:
 
 - broad intent
+- four closed natural-English surface categories
 - an optional draft sign-aware form
 - candidate gloss strings
 
-Candidate glosses are planning tokens, not verified signs or motion commands.
+The current parser fills only the surface categories:
+
+```json
+{
+  "sentence_kind": "question",
+  "question_kind": "wh",
+  "question_category": "where",
+  "negation_cue": "absent"
+}
+```
+
+These values describe source-text form, not SgSL grammar. The schema permits no
+tokens, names, fragments, reconstructed text, extracted identity, or free-form
+surface value. The current implementation always keeps `sign_aware_form` null
+and `candidate_glosses` empty.
+
+Any future candidate glosses would be planning tokens, not verified signs or
+motion commands, and would require a separate reviewed contract change.
 No handshape, orientation, location, movement, contact, non-manual realization,
 signer-space coordinate, or avatar field is permitted.
 

@@ -1,4 +1,4 @@
-"""Minimal clean-room public parser implementation.
+"""Minimal clean-room public surface analyzer.
 
 This module intentionally implements no SgSL grammar rules. It exposes visible
 uncertainty for ordinary input and blocks name-sign generation requests without
@@ -21,10 +21,11 @@ from .contracts import (
     UnsupportedReason,
     UnsupportedResponse,
 )
+from .surface import analyze_surface
 
 
-PARSER_VERSION = "0.1.0"
-RULESET_VERSION = "public-safety-only-v1"
+PARSER_VERSION = "0.2.0"
+RULESET_VERSION = "public-surface-only-v1"
 
 _NAME_SIGN_PATTERN = re.compile(r"\bname[\s-]+sign\b", re.IGNORECASE)
 _GENERATION_ACTIONS = frozenset(
@@ -91,23 +92,24 @@ def parse_public(text: str) -> UncertainResponse | UnsupportedResponse:
             provenance=_provenance(),
         )
 
-    surface_intent = "question" if normalized_text.endswith("?") else "unknown"
+    surface = analyze_surface(normalized_text)
     return UncertainResponse(
         schema_version=SCHEMA_VERSION,
         outcome="uncertain",
         status="review_required",
         input=input_metadata,
         analysis=GrammarAnalysis(
-            intent=surface_intent,
+            intent=surface.sentence_kind,
+            surface=surface,
             sign_aware_form=None,
             candidate_glosses=[],
         ),
         warnings=[
             ContractWarning(
-                code="public_grammar_rules_not_implemented",
+                code="sgsl_grammar_rules_unavailable",
                 message=(
-                    "The clean-room public ruleset does not yet produce "
-                    "SgSL-aware grammar planning."
+                    "Surface categories are not SgSL grammar, translation, "
+                    "or signing output."
                 ),
                 field="analysis",
                 review_state="review_required",

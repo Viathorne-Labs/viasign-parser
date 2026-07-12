@@ -5,14 +5,14 @@ No public release is approved yet.
 ## Source
 
 - [x] Every local candidate path appears in the deterministic path-and-SHA-256
-  manifest; repository-owner approval remains open.
+  manifest; approval of the changed V2 candidate remains open.
 - [x] The candidate excludes `.git`; the future public repository must be
   created only from manifest-listed paths.
 - [x] No excluded package, import, asset, document, or generated file is present
   in the local candidate.
 - [x] No migrated private code is shipped; future migrations remain blocked by
   the provenance gate.
-- [ ] Repository owner approves the exact candidate manifest.
+- [ ] Repository owner approves the exact V2 candidate manifest.
 
 ## Language data
 
@@ -30,6 +30,9 @@ No public release is approved yet.
 - [x] Input text is not persisted or logged by default.
 - [x] Success, unsupported, malformed, and validation-error responses do not
   echo submitted text or invalid values.
+- [x] Surface analysis contains only closed categories and cannot contain
+  tokens, names, fragments, reconstructed text, or extracted values.
+- [x] The current implementation returns no sign-aware form or candidate gloss.
 
 ## Engineering
 
@@ -46,8 +49,8 @@ No public release is approved yet.
 - [x] README, API, and website candidate text do not claim that the current
   public parser implements SgSL grammar, translation, or motion.
 - [x] Apache-2.0 text, current SPDX metadata, NOTICE, packaged license files, and
-  trademark boundaries pass the prepared review; owner approval remains open.
-- [ ] Repository owner completes `docs/OWNER_REVIEW_PACKET_V1.md` explicitly.
+  trademark boundaries remain unchanged from the approved V1 scope.
+- [ ] Repository owner completes `docs/OWNER_REVIEW_PACKET_V2.md` explicitly.
 - [ ] A separate explicit release approval has been recorded.
 
 ## Hosting

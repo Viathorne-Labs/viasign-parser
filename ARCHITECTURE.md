@@ -47,7 +47,7 @@ Runtime OpenAPI, Swagger UI, ReDoc, translation, motion, avatar, upload,
 feedback, corpus, review-administration, and private-source routes are disabled.
 
 Every accepted parse response uses schema `viasign.parser.response.v1` and
-contract `1.0.0`. It must contain:
+contract `1.1.0`. It must contain:
 
 ```text
 status = review_required
@@ -66,7 +66,8 @@ motion-unavailable values.
 | `contracts/v1/` | Machine-readable request and response schemas | Private types, examples, or review data |
 | `api_models.py` | Strict public request, health, metadata, and error models | Linguistic rules or motion fields |
 | `contracts.py` | Typed response contract and versioned provenance | Transport, storage, or private identifiers |
-| `parser.py` | Minimal clean-room public safety behavior and visible uncertainty | Private parser logic, lexicon, or benchmarks |
+| `surface.py` | Closed natural-English surface categories | Submitted values, SgSL rules, glosses, or private vocabulary |
+| `parser.py` | Clean-room orchestration, name-sign safety, and visible uncertainty | Private parser logic, lexicon, or benchmarks |
 | `safety.py` | Final response-invariant enforcement | Recovery that makes unsafe output look valid |
 | `middleware.py` | Body ceiling, request deadline, and transient rate limiting | Persistent identities, sentence logs, or analytics |
 | `settings.py` | Validated local and deployment configuration | Secrets or wildcard production origins |
@@ -75,7 +76,7 @@ motion-unavailable values.
 The dependency direction stays one way:
 
 ```text
-HTTP transport -> public models/contracts -> clean-room parser -> safety check
+HTTP transport -> public models/contracts -> surface analyzer -> clean-room parser -> safety check
 ```
 
 The parser does not import the website, deployment provider, private source,
@@ -93,8 +94,9 @@ motion engine, review system, or data store.
 5. The typed request model rejects extra fields, blank input, control characters,
    and text longer than 1,000 characters. Validation errors return a generic
    fail-closed body without submitted values.
-6. The public parser returns visible uncertainty or an explicit unsupported
-   result. Name-sign generation is blocked without analysis fallback.
+6. The public parser returns closed, non-verbatim surface categories with
+   visible uncertainty or an explicit unsupported result. Name-sign generation
+   is blocked without analysis fallback.
 7. The safety layer verifies the frozen schema and review/motion invariants.
 8. The response receives `Cache-Control: no-store` and
    `X-Content-Type-Options: nosniff`. It includes input mode metadata but never

@@ -64,3 +64,14 @@ It may use only:
 It must not consult or translate private source code line-by-line while being
 implemented.
 
+## Public surface-analysis extension
+
+The later V0.1 surface analyzer remains a clean-room extension, not a migration.
+It may classify only general natural-English sentence form through closed
+categories and must not reproduce private output types, rule order, constants,
+vocabulary, examples, benchmarks, source-gloss handling, or SgSL planning.
+
+Sign-aware ordering, gloss production, identity extraction, indexing,
+topicalization, rhetorical questions, completion markers, time-sign handling,
+location planning, non-manual signals, and sign parameters remain deferred
+until they have separate public evidence, synthetic fixtures, and human review.

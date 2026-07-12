@@ -17,7 +17,8 @@ tracked. Put genuinely private or machine-specific notes in a separate
 - Treat every parser result as `review_required`.
 - Keep `motion_ready` false in every public response.
 - Fail closed if either invariant is missing or changes.
-- Describe output as draft grammar planning, never final SgSL translation.
+- Describe current output as natural-English surface analysis, never SgSL
+  grammar or final translation.
 - Do not infer or generate name signs.
 - Never echo submitted sentence text in public success or error responses.
 - Do not add motion, avatar, signer-space coordinates, or renderer output.
@@ -46,10 +47,11 @@ Never import from or depend on:
 
 ## API boundary
 
-The public service exposes only health, metadata, and grammar-planning parse
-routes. The first public parser contains safety behavior but no SgSL grammar
-rules: ordinary input returns visible uncertainty, while prohibited generation
-requests return unsupported with no analysis.
+The public service exposes only health, metadata, and surface-analysis parse
+routes. The current public parser contains safety behavior and closed
+natural-English surface categories but no SgSL grammar rules: ordinary input
+returns visible uncertainty, while prohibited generation requests return
+unsupported with no analysis.
 
 The API must not log input text, persist requests, or return submitted text in
 its public response body.

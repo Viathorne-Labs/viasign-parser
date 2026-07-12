@@ -32,8 +32,9 @@ The request model:
 
 ## Current response
 
-The first clean-room implementation contains safety behavior but no SgSL
-grammar rules. Ordinary input returns visible uncertainty:
+The clean-room implementation contains safety behavior and a small
+natural-English surface analyzer, but no SgSL grammar rules. Ordinary input
+returns visible uncertainty:
 
 ```json
 {
@@ -44,6 +45,12 @@ grammar rules. Ordinary input returns visible uncertainty:
   },
   "analysis": {
     "intent": "question",
+    "surface": {
+      "sentence_kind": "question",
+      "question_kind": "wh",
+      "question_category": "where",
+      "negation_cue": "absent"
+    },
     "sign_aware_form": null,
     "candidate_glosses": []
   },
@@ -56,6 +63,8 @@ Name-sign generation requests return `unsupported`, at least one reason, and
 `analysis: null`.
 
 Neither successful nor unsupported responses echo the submitted sentence.
+Surface analysis returns only closed categories; it never returns tokens,
+names, fragments, or reconstructed text.
 Malformed JSON, invalid fields, and invalid values return a generic
 `422 invalid_request` response without submitted values or validation internals.
 

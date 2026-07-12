@@ -26,6 +26,6 @@
     "parser_id": "viasign-parser",
     "parser_version": "contract-fixture",
     "ruleset_version": "not-implemented",
-    "contract_version": "1.0.0"
+    "contract_version": "1.1.0"
   }
 }

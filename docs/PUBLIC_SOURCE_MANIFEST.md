@@ -39,9 +39,14 @@ migrated parser implementation or private benchmark data.
 
 The minimal `src/viasign_parser/parser.py` implementation was also authored in
 this repository from the public contract and synthetic fixtures. It implements
-only generic question-punctuation detection, visible uncertainty, and an
-explicit policy block for name-sign generation. It contains no SgSL grammar or
-private lexicon logic.
+visible uncertainty and an explicit policy block for name-sign generation. It
+contains no SgSL grammar or private lexicon logic.
+
+`src/viasign_parser/surface.py` was independently authored for contract `1.1.0`.
+It reports only closed natural-English sentence, question, question-category,
+and negation-cue values. It does not return tokens, names, fragments, SgSL
+order, glosses, identity fields, motion, or avatar data. No private constants,
+vocabulary, examples, benchmark expectations, or type structures were copied.
 
 `Dockerfile`, `.dockerignore`, `render.yaml`, `requirements.lock`, and the
 Render hosting decision were newly authored for this public repository. They
@@ -86,7 +91,8 @@ signature, personal contact information, or owner identity document.
 
 The public response contract and validation handler were refined before first
 publication so neither success nor error responses echo submitted sentence
-text. Only non-sensitive input mode metadata remains in the response.
+text. Only non-sensitive input mode metadata and closed surface categories
+remain in the response.
 
 ## Excluded from the first public release
 

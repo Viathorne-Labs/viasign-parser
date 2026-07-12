@@ -29,9 +29,10 @@ def test_metadata_exposes_safety_boundary() -> None:
         "api_version": "v1",
         "maturity": "pre-alpha",
         "parser_available": True,
+        "surface_analysis_available": True,
         "grammar_rules_available": False,
-        "parser_version": "0.1.0",
-        "ruleset_version": "public-safety-only-v1",
+        "parser_version": "0.2.0",
+        "ruleset_version": "public-surface-only-v1",
         "review_required": True,
         "motion_ready": False,
     }
@@ -48,10 +49,16 @@ def test_parse_returns_visible_uncertainty_without_grammar_output() -> None:
     assert payload["outcome"] == "uncertain"
     assert payload["analysis"] == {
         "intent": "question",
+        "surface": {
+            "sentence_kind": "question",
+            "question_kind": "yes_no",
+            "question_category": "none",
+            "negation_cue": "absent",
+        },
         "sign_aware_form": None,
         "candidate_glosses": [],
     }
-    assert payload["warnings"][0]["code"] == "public_grammar_rules_not_implemented"
+    assert payload["warnings"][0]["code"] == "sgsl_grammar_rules_unavailable"
     assert payload["review_required"] is True
     assert payload["motion_ready"] is False
 
