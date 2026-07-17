@@ -12,13 +12,17 @@ The reviewed V2 source is public. Hosting activation is not approved.
   in the local candidate.
 - [x] No migrated private code is shipped; future migrations remain blocked by
   the provenance gate.
-- [x] Repository owner approved the exact V2 candidate manifest.
+- [x] Repository owner approved the exact manifest used for the published V2
+  source checkpoint.
+- [ ] The current local-tester candidate hashes receive separate review as part
+  of its source-publication approval; the earlier approval does not carry over.
 
 ## Language data
 
 - [x] All fixtures are independently authored for structural contract testing.
 - [x] No private lesson or community material is present in the candidate.
-- [ ] Deaf/SgSL review has checked the public claims and limitations.
+- [ ] Broader Deaf/SgSL community review has checked the public claims and
+  limitations.
 - [x] Uncertainty remains visible and `review_required`.
 
 ## API
@@ -38,6 +42,18 @@ The reviewed V2 source is public. Hosting activation is not approved.
 
 - [x] Tests pass locally and the rebuilt container passes the runtime smoke
   boundary; repeat against the exact approved release artifact.
+- [x] Local browser-assisted tester evidence covers uncertain, prohibited,
+  unavailable, contract, focus, and reflow boundaries as recorded in
+  `docs/LOCAL_TESTER_REVIEW_V1.md`.
+- [x] The completed `viathorne-web` representative manual accessibility baseline
+  is credited for the shared shell and disabled tester boundary; it is not
+  repeated for this parser-only correction.
+- [x] The enabled tester's bounded human check covers keyboard navigation,
+  Safari VoiceOver ready/checking/final and revealed-result phrases, native 200
+  percent zoom, and increased contrast with a safe result visible.
+- [x] Repository-owner review of the enabled flow's privacy wording, prototype
+  limits, Deaf/SgSL positioning, and licensing boundary is complete; broader
+  community review remains separate.
 - [x] Secret, local-path, binary, private-import, provenance, dependency, and
   container scans pass for the local candidate.
 - [x] Dependency versions are locked for the candidate.
@@ -53,6 +69,8 @@ The reviewed V2 source is public. Hosting activation is not approved.
 - [x] Repository owner completed `docs/OWNER_REVIEW_PACKET_V2.md` explicitly.
 - [x] A separate explicit source-publication approval was recorded and commit
   `e9e2f94b2b3f5e22c9be4a29026e00f3b9ffb693` was published.
+- [ ] The local tester safety correction and bounded accessibility review
+  evidence receive a separate source-publication approval.
 
 ## Hosting
 
@@ -73,6 +91,7 @@ website connection.
 - [x] The approved checkpoint is merged into public `main` at
   `842a9ad820e4ac919fb88371a3ab9199ebc74a79`.
 - [x] The internal-health evidence received separate publication approval.
-- [ ] The approved internal-health evidence is merged into public `main`.
+- [x] The approved internal-health evidence is merged into public `main` at
+  `aeca8bedadf16655fea34726bb3db9e780ba0f07`.
 - [ ] Production CORS, website connection, maintenance-mode removal, public
   traffic, and submissions receive separate explicit approvals.

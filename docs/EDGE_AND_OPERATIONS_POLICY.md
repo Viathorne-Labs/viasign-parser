@@ -125,7 +125,8 @@ Each step requires evidence before the next:
    `onrender.com` hostname returns `404` without reaching the application.
 4. Verify health checks, failure notifications, metrics, request logs, region,
    instance type, and log retention in the live Render workspace.
-5. Complete local assistive-technology and Deaf/SgSL review and record a
+5. Retain the completed bounded local accessibility and repository-owner
+   wording evidence, complete broader Deaf/SgSL community review, and record a
    consent-led pilot plan with an incident owner and stop conditions.
 6. In a separately reviewed change, set API CORS to exactly
    `https://www.viathorne.com`, configure the website's exact API origin, and
@@ -166,7 +167,9 @@ The following evidence remains incomplete or blocked:
 - custom-domain TLS and HTTP-to-HTTPS behavior, which require approved DNS
 - rollback to an earlier successful artifact, because none exists yet
 - exact-release load and abuse checks
-- assistive-technology, privacy, and Deaf/SgSL review
+- post-activation repetition of the relevant assistive-technology checks
+- security/privacy deployment review
+- broader Deaf/SgSL community review and a consent-led pilot plan
 
 Maintenance mode and empty CORS must remain until those items and every human
 review gate are complete.

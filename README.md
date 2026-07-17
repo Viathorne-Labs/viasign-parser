@@ -36,9 +36,10 @@ grammar_rules_available = false
 `POST /v1/parse` returns an `uncertain` response with closed natural-English
 surface categories and no proposed signing for ordinary input. It can label
 sentence kind, question kind, a generic question category, and a negation cue.
-These observations are not SgSL grammar. Name-sign generation requests return
-`unsupported` with no analysis. Responses never echo the submitted sentence,
-tokens, names, or fragments. No SgSL grammar rules have been added yet.
+These observations are not SgSL grammar. Any recognized name-sign-related input
+returns `unsupported` with no analysis, including informational or generation
+wording. Responses never echo the submitted sentence, tokens, names, or
+fragments. No SgSL grammar rules have been added yet.
 
 ## Local development
 

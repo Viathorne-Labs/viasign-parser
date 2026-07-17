@@ -59,8 +59,9 @@ returns visible uncertainty:
 }
 ```
 
-Name-sign generation requests return `unsupported`, at least one reason, and
-`analysis: null`.
+Recognized name-sign-related input returns `unsupported`, at least one reason,
+and `analysis: null`. The boundary applies to informational, declarative, and
+generation wording; it does not attempt name-sign analysis.
 
 Neither successful nor unsupported responses echo the submitted sentence.
 Surface analysis returns only closed categories; it never returns tokens,

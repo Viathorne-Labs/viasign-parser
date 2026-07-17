@@ -41,15 +41,28 @@ def test_release_manifest_records_current_public_state_and_blocks_update() -> No
     generated = build_manifest()
 
     assert manifest == generated
-    assert manifest["publication_authorized"] is True
+    assert manifest["candidate_id"] == (
+        "viasign-parser-public-v2-local-tester-review-candidate"
+    )
+    assert manifest["status"] == "local_tester_review_publication_blocked"
+    assert manifest["publication_authorized"] is False
     assert manifest["deployment_authorized"] is False
     assert manifest["inert_service_creation_authorized"] is True
     assert manifest["inert_service_created"] is True
     assert manifest["public_activation_authorized"] is False
+    assert manifest["review_gates"] == {
+        "repository_owner_enabled_flow_wording": {
+            "status": "complete",
+            "recorded_on": "2026-07-17",
+            "items_approved": 5,
+        },
+        "deaf_sgsl_community": "pending",
+        "security_privacy_deployment": "pending",
+    }
     assert manifest["published_source"] == {
         "repository": "https://github.com/Viathorne-Labs/viasign-parser",
         "branch": "main",
-        "commit": "842a9ad820e4ac919fb88371a3ab9199ebc74a79",
+        "commit": "aeca8bedadf16655fea34726bb3db9e780ba0f07",
     }
     assert manifest["live_inert_service"] == {
         "commit": "e8ca6a688c6905fba1f2f02646b665623f0c689e",
@@ -66,6 +79,47 @@ def test_release_manifest_records_current_public_state_and_blocks_update() -> No
 
 def test_release_candidate_has_no_boundary_findings() -> None:
     assert audit_release_candidate() == ()
+
+
+def test_local_tester_review_records_owner_wording_without_activation() -> None:
+    review = (ROOT / "docs/LOCAL_TESTER_REVIEW_V1.md").read_text(encoding="utf-8")
+
+    assert "human accessibility and repository-owner wording reviews complete" in review
+    assert "broader reviews pending" in review
+    assert "Human accessibility check:** 2026-07-17" in review
+    assert "Repository-owner wording review:** 2026-07-17" in review
+    assert "unpublished local public-parser candidate" in review
+    assert "all recognized name-sign-related input is\nunsupported" in review
+    assert "completed\nrepresentative `viathorne-web` accessibility baseline" in review
+    assert "bounded human accessibility pass" in review
+    assert "native 200 percent\nzoom" in review
+    assert "Safari with VoiceOver read the\nrequested ready, checking" in review
+    assert "unavailable-state VoiceOver path was not part of this human pass" in review
+    assert "Keep the tester described as local and not publicly enabled" in review
+    assert "limited natural-English surface analysis" in review
+    assert "hosting providers may process technical\n   network metadata" in review
+    assert "research toward future SgSL support" in review
+    assert "Apache-2.0 permits use, modification, and redistribution" in review
+    assert "is not broader Deaf/SgSL community\napproval" in review
+    assert "review_required=true" in review
+    assert "motion_ready=false" in review
+    assert "Public activation:** Blocked" in review
+    assert "does not authorize a\ncommit, source publication" in review
+
+
+def test_owner_wording_review_does_not_close_broader_review_or_publication() -> None:
+    roadmap = (ROOT / "ROADMAP.md").read_text(encoding="utf-8")
+    checklist = (ROOT / "docs/RELEASE_CHECKLIST.md").read_text(encoding="utf-8")
+    deployment_gate = (ROOT / "docs/PRODUCTION_DEPLOYMENT_GATE.md").read_text(
+        encoding="utf-8"
+    )
+
+    assert "[x] Complete repository-owner review" in roadmap
+    assert "[ ] Broader Deaf/SgSL community review" in checklist
+    assert "[x] Repository-owner review of the enabled flow" in checklist
+    assert "[ ] The local tester safety correction" in checklist
+    assert "[ ] Security and privacy deployment review" in deployment_gate
+    assert "[ ] Broader Deaf/SgSL community reviewers" in deployment_gate
 
 
 def test_package_uses_current_spdx_and_includes_public_notices() -> None:

@@ -18,16 +18,16 @@
   },
   "warnings": [
     {
-      "code": "cultural_action_not_supported",
-      "message": "The public parser does not create or assign name signs.",
+      "code": "cultural_topic_not_supported",
+      "message": "The public parser does not analyze, create, assign, or propose name signs.",
       "field": "request.text",
       "review_state": "review_required"
     }
   ],
   "unsupported_reasons": [
     {
-      "code": "name_sign_generation_blocked",
-      "message": "Name-sign creation requires appropriate human and community processes."
+      "code": "name_sign_boundary_blocked",
+      "message": "Name-sign topics require appropriate human and community processes."
     }
   ],
   "review_required": true,

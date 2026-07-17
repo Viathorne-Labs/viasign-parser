@@ -164,8 +164,9 @@ Official references:
 - [x] Reject remote Render previews for V1; pre-release accessibility and
   Deaf/SgSL review remains local as recorded in
   `docs/EDGE_AND_OPERATIONS_POLICY.md`.
-- [x] Prepare website privacy wording for Render and the 14-day request logs;
-  the tester remains disabled.
+- [x] Prepare qualified website privacy wording for provider-controlled request
+  metadata; exact configuration and retention still require live verification
+  before activation, and the tester remains disabled.
 - [x] Freeze the exact CORS and Content Security Policy values in
   `docs/ORIGIN_AND_CSP_POLICY.md`; activation remains blocked.
 - [x] Record Render's body-limit and timeout gaps, add a three-second fail-closed
@@ -174,7 +175,10 @@ Official references:
 - [ ] Complete live domain, health, notification, metric, log, and rollback
   evidence. The exact internal health response is verified; custom-domain TLS
   and rollback remain unavailable or separately blocked.
-- [ ] Complete assistive-technology and Deaf/SgSL review.
+- [x] Complete bounded local assistive-technology and repository-owner
+  enabled-flow wording review.
+- [ ] Complete broader Deaf/SgSL community review and repeat the relevant
+  assistive-technology checks after any separately approved activation.
 - [x] Record explicit approval for one inert Blueprint sync and service
   creation; activation remains unapproved.
 

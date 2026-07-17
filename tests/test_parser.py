@@ -41,23 +41,56 @@ def test_generic_statement_reports_only_source_surface_categories() -> None:
         "Please create a name sign for me.",
         "Can this tool assign a name-sign?",
         "Generate my name sign.",
+        "Assign a sign-name.",
+        "Generate name signs.",
+        "Assign sign names.",
+        "Create a namesign.",
+        "Invent my signname.",
+        "What is a name sign?",
+        "How are sign names discussed?",
+        "What is a name–sign?",
+        "Is name_sign different?",
+        "How do I sign my name?",
+        "What is my name in sign language?",
+        "Explain a Singapore Sign Language name.",
+        "How should my name be signed?",
+        "What are names in SgSL?",
+        "What is a name’s sign?",
+        "Tell me which sign people use for my name.",
+        "My name as an SgSL sign.",
+        "They are signing my name.",
+        "This sign is used when naming me.",
     ],
 )
-def test_name_sign_generation_is_unsupported(text: str) -> None:
+def test_name_sign_related_input_is_unsupported(text: str) -> None:
     result = parse_public(text)
     assert result.outcome == "unsupported"
     assert result.analysis is None
     assert result.input.model_dump() == {"mode": "natural"}
-    assert result.unsupported_reasons[0].code == "name_sign_generation_blocked"
+    assert result.warnings[0].code == "cultural_topic_not_supported"
+    assert result.unsupported_reasons[0].code == "name_sign_boundary_blocked"
+    assert result.review_required is True
+    assert result.motion_ready is False
 
 
-def test_name_sign_information_question_is_not_treated_as_generation() -> None:
-    result = parse_public("What is a name sign?")
+@pytest.mark.parametrize(
+    "text",
+    [
+        "Please sign the form.",
+        "A signature is required.",
+    ],
+)
+def test_unrelated_uses_of_sign_remain_uncertain(text: str) -> None:
+    result = parse_public(text)
     assert result.outcome == "uncertain"
     assert result.input.model_dump() == {"mode": "natural"}
-    assert result.analysis.intent == "question"
-    assert result.analysis.surface.question_kind == "wh"
-    assert result.analysis.surface.question_category == "what"
+    assert result.analysis is not None
+
+
+def test_name_and_sign_lexical_cooccurrence_fails_closed_conservatively() -> None:
+    result = parse_public("The sign names the room.")
+    assert result.outcome == "unsupported"
+    assert result.analysis is None
 
 
 @pytest.mark.parametrize(
