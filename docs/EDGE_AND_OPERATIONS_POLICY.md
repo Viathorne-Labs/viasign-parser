@@ -11,9 +11,11 @@ sync and service creation. That approval does not include DNS changes,
 production CORS, website connection, maintenance-mode removal, remote previews,
 public traffic, or submissions.
 
-The approved service now runs exact public merge commit
-`e8ca6a688c6905fba1f2f02646b665623f0c689e`. The available live evidence and
-honest gaps are recorded in `docs/INERT_RENDER_SERVICE_AUDIT_V1.md`.
+The approved inert service now runs exact reviewed parser commit
+`d88bc2664628135a04ee4961866fea2380e1343d` at parser `0.2.1`. The prior
+`e8ca6a688c6905fba1f2f02646b665623f0c689e` deployment is the unexercised
+rollback candidate. The available live evidence and honest gaps are recorded in
+`docs/INERT_RENDER_SERVICE_AUDIT_V1.md`.
 
 ## Provider findings and honest limits
 
@@ -165,7 +167,8 @@ configuration intent alone.
 The following evidence remains incomplete or blocked:
 
 - custom-domain TLS and HTTP-to-HTTPS behavior, which require approved DNS
-- rollback to an earlier successful artifact, because none exists yet
+- a controlled rollback rehearsal to the prior `e8ca6a6` artifact, which
+  requires separate approval
 - exact-release load and abuse checks
 - post-activation repetition of the relevant assistive-technology checks
 - security/privacy deployment review

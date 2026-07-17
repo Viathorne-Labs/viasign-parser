@@ -1,7 +1,7 @@
 # Production Deployment Gate
 
-- **Status:** Exact 0.2.1 candidate review complete and evidence publication
-  approved; inert service update and public activation blocked
+- **Status:** Exact 0.2.1 inert service update complete; post-deployment evidence
+  publication approved; public activation blocked
 - **Last reviewed:** 2026-07-17
 - **Applies to:** The public `viasign-parser` HTTP service
 
@@ -163,20 +163,22 @@ test submissions:
 - [x] Repository owner explicitly approves publication of the 2026-07-17
   provider-refresh and exact-image evidence. This evidence-publication decision
   does not authorize any Render update or activation.
-- [ ] A later, separate provider-mutation approval authorizes exactly two inert
+- [x] A later, separate provider-mutation approval authorized exactly two inert
   actions: regenerate the deploy hook and use **Deploy a specific commit** for
-  `d88bc266`. It authorizes no other provider, DNS, CORS, website, traffic, or
-  activation change.
-- [ ] Only after that approval, regenerate the deploy hook through the dashboard
-  and rely on Render's rotation action to invalidate the prior value. Do not
-  invoke the old or new hook as a test, and record neither value.
-- [ ] After rotation, update the existing inert service from parser `0.2.0` by
-  using **Deploy a specific commit** for `d88bc266`. **Deploy latest commit** is
-  prohibited for this candidate. Verify the live event shows `d88bc266` before
-  internal health checks, while
-  maintenance mode stays on, CORS stays empty, automatic deploys stay off, DNS
-  stays unresolved, the Render subdomain stays disabled, and the website stays
-  disconnected.
+  `d88bc266`. It authorized no other provider, DNS, CORS, website, traffic, or
+  activation change and is now consumed, permitting no additional provider
+  mutation.
+- [x] After that approval, the deploy hook was regenerated through the
+  dashboard, and Render's rotation action invalidated the prior value. Neither
+  the old nor new hook was invoked as a test or recorded.
+- [x] After rotation, the existing inert service was updated from parser `0.2.0`
+  using **Deploy a specific commit** for `d88bc266`; **Deploy latest commit** was
+  not used. The live event showed `d88bc266` before internal health checks,
+  while maintenance mode stayed on, CORS stayed empty, automatic deploys stayed
+  off, DNS stayed unresolved, the Render subdomain stayed disabled, and the
+  website stayed disconnected.
+- [x] Repository owner separately approved publication of the exact
+  post-deployment evidence. This does not authorize any activation change.
 - [ ] Security and privacy deployment review approves the complete edge,
   logging, and retention policy; the origin/CSP and privacy-notice preparation
   is recorded.
