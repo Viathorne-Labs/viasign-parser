@@ -82,10 +82,11 @@
 - [x] Record a separate owner decision approving one inert Blueprint sync and
   service creation without DNS, CORS, website, or maintenance-mode activation.
 - [ ] Complete live Render health, domain, notification, metric, log, and
-  rollback evidence. The first inert audit verified the exact live commit,
-  isolation, maintenance state, configuration, clean startup logs, metrics
-  surface, failure notifications, and exact internal health response;
-  custom-domain TLS and rollback remain unavailable or blocked.
+  rollback evidence. The 2026-07-17 read-only refresh reconfirmed the exact live
+  `0.2.0` commit, isolation, maintenance state, empty CORS, configuration, clean
+  startup logs, metrics surface, failure notifications, and exact internal
+  health response. Custom-domain TLS and a meaningful rollback rehearsal remain
+  unavailable or blocked.
 - [x] Verify the exact internal `/healthz` response while maintenance mode and
   empty CORS remained unchanged.
 - [x] Record local browser-assisted evidence for the enabled tester's uncertain,
@@ -142,3 +143,24 @@
 - [x] Obtain repository-owner approval before publishing the local tester safety
   correction and bounded accessibility review evidence; separate source-only
   approval for parser PR #4 was recorded on 2026-07-17.
+- [x] Merge parser PR #4 into public `main` at
+  `d88bc2664628135a04ee4961866fea2380e1343d` and publish parser `0.2.1` source.
+- [x] Refresh the live inert-provider evidence and repeat the exact `0.2.1`
+  dependency, provenance, arm64/amd64 image, configuration, and runtime smoke
+  checks without changing Render, DNS, CORS, or the website.
+- [x] Obtain explicit publication approval for the 2026-07-17 provider-refresh
+  and exact-image evidence without authorizing a Render update or activation.
+- [ ] Obtain a later, separate provider-mutation approval authorizing exactly
+  deploy-hook regeneration plus **Deploy a specific commit** for
+  `d88bc2664628135a04ee4961866fea2380e1343d`; authorize no other provider or
+  activation change.
+- [ ] Only after that approval, regenerate the hook through the dashboard. Do
+  not invoke the old or new value as a test and never record either value.
+- [ ] After rotation, update the existing inert service from parser `0.2.0`
+  using **Deploy a specific commit**, verify that exact live commit before
+  internal checks, and retain maintenance mode, empty CORS, automatic deploys
+  off, disabled Render subdomain, unresolved DNS, and a disconnected website.
+  **Deploy latest commit** is not approved.
+- [ ] Before any website connection, merge and verify the bounded website
+  defense-in-depth patch for exact production API/page origins and locally
+  generated `429` wording after strict contract validation.

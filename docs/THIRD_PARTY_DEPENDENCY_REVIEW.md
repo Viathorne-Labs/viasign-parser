@@ -80,6 +80,17 @@ The public `NOTICE` describes ViaSign's own copyright, trademark, language,
 community-knowledge, and private-source boundaries. It must not imply that an
 open-source software license grants rights over SgSL or community knowledge.
 
+## Exact 0.2.1 refresh
+
+On 2026-07-17, `requirements.lock` from exact public source commit
+`d88bc2664628135a04ee4961866fea2380e1343d` was reviewed again before any
+deployment update. `pip-audit 2.9.0` reported no known vulnerability. The
+runtime package versions and licenses matched the table above, and both fresh
+Linux arm64 and Linux amd64 images passed `pip check`. Their installed package
+metadata retained the expected upstream license material.
+
+This time-bounded refresh authorizes no Render update or public activation.
+
 ## Release rule
 
 Before each release or container build:

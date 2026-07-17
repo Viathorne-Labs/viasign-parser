@@ -35,22 +35,29 @@ def test_private_local_markdown_notes_are_excluded(tmp_path) -> None:
     assert collect_release_files(tmp_path) == ()
 
 
-def test_release_manifest_records_source_authorization_and_blocks_activation() -> None:
+def test_release_manifest_records_evidence_publication_and_blocks_deployment() -> None:
     check_manifest()
     manifest = json.loads((ROOT / MANIFEST_RELATIVE_PATH).read_text(encoding="utf-8"))
     generated = build_manifest()
 
     assert manifest == generated
     assert manifest["candidate_id"] == (
-        "viasign-parser-public-v2-local-tester-review-candidate"
+        "viasign-parser-public-0.2.1-deployment-evidence-candidate"
     )
-    assert manifest["status"] == "local_tester_review_publication_authorized"
+    assert manifest["status"] == "deployment_candidate_evidence_publication_authorized"
     assert manifest["publication_authorized"] is True
+    assert manifest["source_publication_authorized"] is True
+    assert manifest["deployment_evidence_publication_authorized"] is True
     assert manifest["deployment_authorized"] is False
     assert manifest["inert_service_creation_authorized"] is True
     assert manifest["inert_service_created"] is True
     assert manifest["public_activation_authorized"] is False
     assert manifest["review_gates"] == {
+        "repository_owner_deployment_evidence_publication": {
+            "status": "complete",
+            "recorded_on": "2026-07-17",
+            "items_approved": 5,
+        },
         "repository_owner_enabled_flow_wording": {
             "status": "complete",
             "recorded_on": "2026-07-17",
@@ -58,17 +65,42 @@ def test_release_manifest_records_source_authorization_and_blocks_activation() -
         },
         "deaf_sgsl_community": "pending",
         "security_privacy_deployment": "pending",
+        "website_defense_in_depth": "pending",
     }
-    assert manifest["published_source"] == {
+    assert manifest["reviewed_deployment_source"] == {
         "repository": "https://github.com/Viathorne-Labs/viasign-parser",
         "branch": "main",
-        "commit": "aeca8bedadf16655fea34726bb3db9e780ba0f07",
+        "commit": "d88bc2664628135a04ee4961866fea2380e1343d",
+        "parser_version": "0.2.1",
+        "authorized_on": "2026-07-17",
     }
     assert manifest["live_inert_service"] == {
         "commit": "e8ca6a688c6905fba1f2f02646b665623f0c689e",
+        "parser_version": "0.2.0",
+        "last_verified_on": "2026-07-17",
         "health_verified": True,
         "maintenance_mode": True,
         "cors_origins": "",
+        "auto_deploy": False,
+        "render_subdomain": "disabled",
+        "custom_domain_status": "waiting_for_dns",
+    }
+    assert manifest["deployment_candidate"] == {
+        "source_commit": "d88bc2664628135a04ee4961866fea2380e1343d",
+        "parser_version": "0.2.1",
+        "reviewed_on": "2026-07-17",
+        "provider_state_refreshed": True,
+        "local_artifact_review": "complete",
+        "deployment_update_authorized": False,
+        "deployment_method": "specific_commit",
+        "deploy_latest_commit_allowed": False,
+        "deploy_hook_rotation_status": "pending",
+        "arm64_image_id": (
+            "sha256:61a6f7b9178b19d3dbc580702764a237b820a23be6a331e72acf582e3106f58d"
+        ),
+        "amd64_image_id": (
+            "sha256:55f5a6b41791527e28c5a393061a2d13b79efa487f257be058d51dfb2b48219d"
+        ),
     }
     assert manifest["required_invariants"] == {
         "review_required": True,
@@ -127,6 +159,32 @@ def test_source_approval_does_not_close_broader_or_deployment_review() -> None:
     assert "[x] The local tester safety correction" in checklist
     assert "[ ] Security and privacy deployment review" in deployment_gate
     assert "[ ] Broader Deaf/SgSL community reviewers" in deployment_gate
+    assert "[ ] Website defense in depth pins" in deployment_gate
+    assert "Exact published source commit `d88bc266` passed" in deployment_gate
+    assert "[ ] A later, separate provider-mutation approval" in deployment_gate
+    assert "public activation blocked" in deployment_gate
+
+
+def test_exact_candidate_review_keeps_render_update_blocked() -> None:
+    checklist = (ROOT / "docs/RELEASE_CHECKLIST.md").read_text(encoding="utf-8")
+    inert_audit = (ROOT / "docs/INERT_RENDER_SERVICE_AUDIT_V1.md").read_text(
+        encoding="utf-8"
+    )
+
+    assert "exact parser `0.2.1` local" in checklist
+    assert "[ ] After rotation, update the inert service" in checklist
+    assert "evidence received explicit\n  publication approval" in checklist
+    assert "regenerate the deploy hook" in checklist
+    assert "Deploy a specific commit" in checklist
+    assert "Deploy latest commit" in checklist
+    assert "The live service still runs commit" in inert_audit
+    assert "parser `0.2.0`" in inert_audit
+    assert "Updating the\ninert service requires a separate explicit approval" in inert_audit
+    assert "VIASIGN_CORS_ORIGINS` is the empty string" in inert_audit
+    assert "must be\nregenerated before any later deployment update" in inert_audit
+    assert "authorize no\nRender update" in (
+        ROOT / "docs/CONTAINER_SECURITY_REVIEW.md"
+    ).read_text(encoding="utf-8")
 
 
 def test_package_uses_current_spdx_and_includes_public_notices() -> None:
