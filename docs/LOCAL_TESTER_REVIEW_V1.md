@@ -1,9 +1,10 @@
 # Local Tester Review V1
 
-- **Status:** Website baseline credited; enabled tester human accessibility and repository-owner wording reviews complete; broader reviews pending
+- **Status:** Website baseline credited; enabled tester human accessibility and repository-owner wording reviews complete; source publication approved; broader reviews pending
 - **Recorded:** 2026-07-14
 - **Human accessibility check:** 2026-07-17
 - **Repository-owner wording review:** 2026-07-17
+- **Source-publication approval:** 2026-07-17
 - **Public parser base:** `aeca8bedadf16655fea34726bb3db9e780ba0f07`
 - **Local parser candidate:** `0.2.1`
 - **Website candidate:** `ae194e950783c58b2da0f59477b648262f44db91`
@@ -13,10 +14,10 @@
 ## Scope
 
 This checkpoint covers a browser-assisted review of the enabled
-`viathorne-web` tester against an unpublished local public-parser candidate.
-Both services ran only on loopback addresses with an explicit local CORS
-origin. No Render preview, production API, DNS, production CORS, public
-traffic, or visitor submission was used.
+`viathorne-web` tester against the public-parser candidate later approved for
+source publication in parser PR #4. Both services ran only on loopback
+addresses with an explicit local CORS origin. No Render preview, production API,
+DNS, production CORS, public traffic, or visitor submission was used.
 
 The review record contains no submitted sentence, reviewer identity, private
 source, private fixture, or parser output copied from a private system. Test
@@ -129,15 +130,30 @@ This repository-owner wording decision is not broader Deaf/SgSL community
 approval, security/privacy deployment approval, source-publication approval,
 deployment approval, or public-activation approval.
 
+## Separate source-publication decision
+
+On 2026-07-17, after the independent final review, the repository owner
+separately approved source publication and merge of parser PR #4. The reviewed
+candidate was commit `f12b2b9b4b16e89e9a92a544da0a7101af5d5e2f`; the only
+later candidate edits permitted by this decision are the mechanical
+authorization record, its generated manifest hashes, and their focused tests.
+
+This approval is source-publication-only. It does not authorize a Render update,
+DNS change, production CORS, website API configuration, maintenance-mode
+removal, deployment, public traffic, visitor submissions, or public activation.
+Broader Deaf/SgSL community and security/privacy deployment reviews remain
+pending.
+
 No reviewer name, disability status, feedback content, or test sentence should
 be added to the public record. A later public checkpoint may record only the
 review scope, result, limitations, and approval state.
 
 ## Gate decision
 
-This evidence supports continued local review only. It does not authorize a
-commit, source publication, Render update, DNS change, production CORS, website
-API configuration, maintenance-mode removal, public traffic, or submissions.
+This evidence and the later separate owner decision authorize source publication
+and merge of parser PR #4 only. They do not authorize a Render update, DNS
+change, production CORS, website API configuration, maintenance-mode removal,
+deployment, public traffic, visitor submissions, or public activation.
 
 Any missing review invariant, returned sentence text, SgSL overclaim, hidden
 uncertainty, inaccessible state change, or analysis or proposal of recognized

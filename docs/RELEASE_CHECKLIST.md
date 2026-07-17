@@ -1,6 +1,7 @@
 # Public Release Checklist
 
-The reviewed V2 source is public. Hosting activation is not approved.
+The reviewed V2 source is public, and the local-tester safety update has separate
+source-publication approval. Hosting and public activation are not approved.
 
 ## Source
 
@@ -14,8 +15,9 @@ The reviewed V2 source is public. Hosting activation is not approved.
   the provenance gate.
 - [x] Repository owner approved the exact manifest used for the published V2
   source checkpoint.
-- [ ] The current local-tester candidate hashes receive separate review as part
-  of its source-publication approval; the earlier approval does not carry over.
+- [x] The current local-tester candidate hashes received separate review as part
+  of the source-publication approval recorded for parser PR #4 on 2026-07-17;
+  the earlier approval did not carry over.
 
 ## Language data
 
@@ -69,8 +71,9 @@ The reviewed V2 source is public. Hosting activation is not approved.
 - [x] Repository owner completed `docs/OWNER_REVIEW_PACKET_V2.md` explicitly.
 - [x] A separate explicit source-publication approval was recorded and commit
   `e9e2f94b2b3f5e22c9be4a29026e00f3b9ffb693` was published.
-- [ ] The local tester safety correction and bounded accessibility review
-  evidence receive a separate source-publication approval.
+- [x] The local tester safety correction and bounded accessibility review
+  evidence received separate source-publication approval on 2026-07-17 for
+  parser PR #4.
 
 ## Hosting
 

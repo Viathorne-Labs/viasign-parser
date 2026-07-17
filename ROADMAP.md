@@ -139,5 +139,6 @@
 - [x] Obtain repository-owner approval to publish the internal-health evidence.
 - [x] Merge the approved internal-health evidence into public `main` at
   `aeca8bedadf16655fea34726bb3db9e780ba0f07`.
-- [ ] Obtain repository-owner approval before publishing the local tester safety
-  correction and bounded accessibility review evidence.
+- [x] Obtain repository-owner approval before publishing the local tester safety
+  correction and bounded accessibility review evidence; separate source-only
+  approval for parser PR #4 was recorded on 2026-07-17.

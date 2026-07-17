@@ -58,9 +58,9 @@
       "sha256": "9390b6d07bd316f5346a3016133237cb01eedae66ab56c6d1c9dd9fc1aec4888"
     },
     {
-      "bytes": 8037,
+      "bytes": 8114,
       "path": "ROADMAP.md",
-      "sha256": "c0f05ec57849748f2db1a3322fbcfbcb3fca3d314f412c527bfc502401152ad1"
+      "sha256": "75438c5acbc5d3c949603b0fb136bc78be767192fac63e161a94ae947f64d631"
     },
     {
       "bytes": 626,
@@ -103,9 +103,9 @@
       "sha256": "5058eac29a8d900f1541e87806f5e15b3e2b52c366ebefe5d714b0ee21907294"
     },
     {
-      "bytes": 8358,
+      "bytes": 9274,
       "path": "docs/LOCAL_TESTER_REVIEW_V1.md",
-      "sha256": "5be59fccfd9205977ba52929fbe3adcc2b0f232d0f24053da7f073929cb7d7af"
+      "sha256": "ada467a0b4ffa517610180a274a193ce4226bb7ea5f1820d5d867835d0d9e2cf"
     },
     {
       "bytes": 3468,
@@ -163,9 +163,9 @@
       "sha256": "4b7f2305c8ff851c43fa4750879fe141341e72890e3d9b2490d50d4b0afbdeca"
     },
     {
-      "bytes": 4941,
+      "bytes": 5104,
       "path": "docs/RELEASE_CHECKLIST.md",
-      "sha256": "8e5f6fb9ae09222b218480ece82f3d099886a4b6b503d17f004053a80447d268"
+      "sha256": "863bacc632755b10ece25130518866e160d4d0c656c817a46b8c7192e27a4097"
     },
     {
       "bytes": 8476,
@@ -213,9 +213,9 @@
       "sha256": "bce6a0a6173d4c2180527b1b7a1e5c86ee96e2d313e4ebd1e07b8cab02b404f6"
     },
     {
-      "bytes": 5888,
+      "bytes": 5890,
       "path": "scripts/release_manifest.py",
-      "sha256": "4e0252c9f8e99ea480976f0744a823215350eb492695a0fc3a5a0b1e258d7030"
+      "sha256": "c89e5fb98dc07efb6a9cf755fce026cbd047d8b905b2506e22f29bcce8786e42"
     },
     {
       "bytes": 122,
@@ -338,9 +338,9 @@
       "sha256": "1362db4ed3b93c8d09312cafa65c1a61c21cc83f16291ea9f71a42b22493d7f3"
     },
     {
-      "bytes": 5819,
+      "bytes": 6321,
       "path": "tests/test_release_candidate.py",
-      "sha256": "b77654ea0968846f42151397bdb0ea9f4f416b0c3808de57114446a03ca2d775"
+      "sha256": "f9c9c9394010a0e7e7cd30132bb0d45e5a285a390e83fdffaa6478099c445b18"
     },
     {
       "bytes": 681,
@@ -371,7 +371,7 @@
   "manifest_self_path": "provenance/v1/release-candidate-manifest.json",
   "manifest_version": "viasign.public-release-manifest.v1",
   "public_activation_authorized": false,
-  "publication_authorized": false,
+  "publication_authorized": true,
   "published_source": {
     "branch": "main",
     "commit": "aeca8bedadf16655fea34726bb3db9e780ba0f07",
@@ -392,9 +392,9 @@
   },
   "root": ".",
   "snapshot_date": "2026-07-17",
-  "status": "local_tester_review_publication_blocked",
+  "status": "local_tester_review_publication_authorized",
   "summary": {
     "file_count": 71,
-    "total_bytes": 251611
+    "total_bytes": 253271
   }
 }
