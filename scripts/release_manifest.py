@@ -120,9 +120,9 @@ def build_manifest(root: Path = ROOT) -> dict[str, object]:
 
     return {
         "manifest_version": "viasign.public-release-manifest.v1",
-        "candidate_id": "viasign-parser-public-v2-internal-health-audit-candidate",
-        "snapshot_date": "2026-07-13",
-        "status": "internal_health_audit_publication_authorized",
+        "candidate_id": "viasign-parser-public-v2-local-tester-review-candidate",
+        "snapshot_date": "2026-07-17",
+        "status": "local_tester_review_publication_authorized",
         "hash_algorithm": "sha256",
         "root": ".",
         "manifest_self_path": MANIFEST_RELATIVE_PATH.as_posix(),
@@ -132,10 +132,19 @@ def build_manifest(root: Path = ROOT) -> dict[str, object]:
         "inert_service_creation_authorized": True,
         "inert_service_created": True,
         "public_activation_authorized": False,
+        "review_gates": {
+            "repository_owner_enabled_flow_wording": {
+                "status": "complete",
+                "recorded_on": "2026-07-17",
+                "items_approved": 5,
+            },
+            "deaf_sgsl_community": "pending",
+            "security_privacy_deployment": "pending",
+        },
         "published_source": {
             "repository": "https://github.com/Viathorne-Labs/viasign-parser",
             "branch": "main",
-            "commit": "842a9ad820e4ac919fb88371a3ab9199ebc74a79",
+            "commit": "aeca8bedadf16655fea34726bb3db9e780ba0f07",
         },
         "live_inert_service": {
             "commit": "e8ca6a688c6905fba1f2f02646b665623f0c689e",

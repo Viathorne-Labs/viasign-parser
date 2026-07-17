@@ -19,7 +19,8 @@ tracked. Put genuinely private or machine-specific notes in a separate
 - Fail closed if either invariant is missing or changes.
 - Describe current output as natural-English surface analysis, never SgSL
   grammar or final translation.
-- Do not infer or generate name signs.
+- Do not analyze recognized name-sign-related input, and do not infer or
+  generate name signs; return `unsupported` with no analysis.
 - Never echo submitted sentence text in public success or error responses.
 - Do not add motion, avatar, signer-space coordinates, or renderer output.
 - Do not add private lesson material, teacher notes, community media, reviewer

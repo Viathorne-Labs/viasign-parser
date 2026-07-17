@@ -65,7 +65,7 @@ def create_app(
     active_settings = settings or load_settings()
     application = FastAPI(
         title="ViaSign Parser",
-        version="0.2.0",
+        version="0.2.1",
         docs_url=None,
         redoc_url=None,
         openapi_url=None,

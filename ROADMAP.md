@@ -27,7 +27,7 @@
 - [x] Connect the new public parser through a one-way contract adapter.
 - [x] Keep all private, legacy, motion, and data dependencies impossible to import.
 - [x] Return visible uncertainty while public SgSL grammar rules remain unavailable.
-- [x] Block name-sign generation with no analysis fallback.
+- [x] Block all recognized name-sign-related input with no analysis fallback.
 
 ## Stage 2C: Clean-room surface analyzer
 
@@ -88,8 +88,18 @@
   custom-domain TLS and rollback remain unavailable or blocked.
 - [x] Verify the exact internal `/healthz` response while maintenance mode and
   empty CORS remained unchanged.
-- [ ] Complete protected-preview privacy, assistive-technology, and Deaf/SgSL
-  review.
+- [x] Record local browser-assisted evidence for the enabled tester's uncertain,
+  name-sign, unavailable, contract, focus, and reflow boundaries in
+  `docs/LOCAL_TESTER_REVIEW_V1.md`.
+- [x] Credit the completed `viathorne-web` representative manual accessibility
+  baseline instead of repeating its site-wide keyboard, zoom, VoiceOver,
+  contrast, motion, focus, and reflow review.
+- [x] Complete the enabled tester's bounded human accessibility check: keyboard
+  navigation, Safari VoiceOver status/result phrases, native 200 percent zoom,
+  and increased system contrast with a safe result visible.
+- [x] Complete repository-owner review of the enabled flow's privacy wording,
+  prototype limits, Deaf/SgSL positioning, and licensing boundary; keep broader
+  community review separate.
 - [x] Record the inert service-creation decision; keep public activation
   separately blocked.
 
@@ -98,7 +108,7 @@
 - Replace private benchmark data with independently authored fixtures.
 - Record fixture provenance.
 - Add regression tests for name-sign safety and unknown input.
-- Obtain Deaf/SgSL review of claims and examples.
+- Obtain broader Deaf/SgSL community review of claims and examples.
 
 ## Stage 4: Release review
 
@@ -127,4 +137,8 @@
 - [x] Merge the approved inert-service audit checkpoint into public `main` at
   `842a9ad820e4ac919fb88371a3ab9199ebc74a79`.
 - [x] Obtain repository-owner approval to publish the internal-health evidence.
-- [ ] Merge the approved internal-health evidence into public `main`.
+- [x] Merge the approved internal-health evidence into public `main` at
+  `aeca8bedadf16655fea34726bb3db9e780ba0f07`.
+- [x] Obtain repository-owner approval before publishing the local tester safety
+  correction and bounded accessibility review evidence; separate source-only
+  approval for parser PR #4 was recorded on 2026-07-17.

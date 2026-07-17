@@ -1,5 +1,6 @@
 import time
 
+import pytest
 import viasign_parser.api as api_module
 from fastapi.testclient import TestClient
 
@@ -31,7 +32,7 @@ def test_metadata_exposes_safety_boundary() -> None:
         "parser_available": True,
         "surface_analysis_available": True,
         "grammar_rules_available": False,
-        "parser_version": "0.2.0",
+        "parser_version": "0.2.1",
         "ruleset_version": "public-surface-only-v1",
         "review_required": True,
         "motion_ready": False,
@@ -63,19 +64,37 @@ def test_parse_returns_visible_uncertainty_without_grammar_output() -> None:
     assert payload["motion_ready"] is False
 
 
-def test_parse_blocks_name_sign_generation_without_analysis() -> None:
+@pytest.mark.parametrize(
+    "text",
+    [
+        "Please create a name sign for me.",
+        "Assign a sign-name.",
+        "What is a name sign?",
+        "Create a namesign.",
+        "How do I sign my name?",
+        "What is my name in SgSL?",
+        "How should my name be signed?",
+        "What are names in SgSL?",
+        "Tell me which sign people use for my name.",
+    ],
+)
+def test_parse_blocks_name_sign_related_input_without_analysis(text: str) -> None:
     response = client.post(
         "/v1/parse",
-        json={"text": "Please create a name sign for me."},
+        json={"text": text},
     )
     assert response.status_code == 200
     payload = response.json()
     assert payload["input"] == {"mode": "natural"}
     assert payload["outcome"] == "unsupported"
     assert payload["analysis"] is None
+    assert payload["warnings"][0]["code"] == "cultural_topic_not_supported"
     assert payload["unsupported_reasons"][0]["code"] == (
-        "name_sign_generation_blocked"
+        "name_sign_boundary_blocked"
     )
+    assert payload["review_required"] is True
+    assert payload["motion_ready"] is False
+    assert text not in response.text
 
 
 def test_parse_rejects_blank_text() -> None:

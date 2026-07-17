@@ -48,7 +48,7 @@ class MetaResponse(StrictModel):
     parser_available: Literal[True] = True
     surface_analysis_available: Literal[True] = True
     grammar_rules_available: Literal[False] = False
-    parser_version: Literal["0.2.0"] = "0.2.0"
+    parser_version: Literal["0.2.1"] = "0.2.1"
     ruleset_version: Literal["public-surface-only-v1"] = "public-surface-only-v1"
     review_required: Literal[True] = True
     motion_ready: Literal[False] = False

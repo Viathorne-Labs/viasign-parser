@@ -1,5 +1,5 @@
 {
-  "candidate_id": "viasign-parser-public-v2-internal-health-audit-candidate",
+  "candidate_id": "viasign-parser-public-v2-local-tester-review-candidate",
   "deployment_authorized": false,
   "files": [
     {
@@ -18,14 +18,14 @@
       "sha256": "ea58695a761a9ef8deac3af95554f3a87d55d8ff20940a639f5555224d666c89"
     },
     {
-      "bytes": 2997,
+      "bytes": 3093,
       "path": "AGENTS.md",
-      "sha256": "71a717968e682d5579951ffca77dc37f15d382326bb336f509bce5aa50b9c462"
+      "sha256": "4c5f4ab3bdeb6eadb16572742b63912c592c7eb027321dcb63f1dfce16311f55"
     },
     {
-      "bytes": 8296,
+      "bytes": 8680,
       "path": "ARCHITECTURE.md",
-      "sha256": "252c669776428f45de9eaa99ba82e4aadefc91dcf30b49c660968a7fe01489c0"
+      "sha256": "6a7c72b9283e299d25d0ee665017cf0bdb256c874654b7b92214679898f71faf"
     },
     {
       "bytes": 541,
@@ -53,14 +53,14 @@
       "sha256": "c1c94c015afd9b438104cfb05b250aa88e0b582fb0d495db83dd53d8b7c6c85c"
     },
     {
-      "bytes": 5401,
+      "bytes": 5458,
       "path": "README.md",
-      "sha256": "cb0c3f7765235cd26bdcc535993e6a7089e11f364c7a07b4a35d6a00fb6a64d8"
+      "sha256": "9390b6d07bd316f5346a3016133237cb01eedae66ab56c6d1c9dd9fc1aec4888"
     },
     {
-      "bytes": 7115,
+      "bytes": 8114,
       "path": "ROADMAP.md",
-      "sha256": "33e460d533ee61aa02e917c5d1a0d0f77d35b02b7e128ac6fcf62ca841595069"
+      "sha256": "75438c5acbc5d3c949603b0fb136bc78be767192fac63e161a94ae947f64d631"
     },
     {
       "bytes": 626,
@@ -78,9 +78,9 @@
       "sha256": "c8b743e558b7a18af66d2639508938514b863fd4a3303bf0f40f5bbbe2d5cea5"
     },
     {
-      "bytes": 3134,
+      "bytes": 3256,
       "path": "docs/API_BOUNDARY.md",
-      "sha256": "97ef3f2bb4d9e8d62e1c8a1636b69dad0a3d031a44feac24029dcf261cfc107c"
+      "sha256": "3ed33412f20664fa4fd156264a8588f0c9e1f7222be40112e12c06937a303461"
     },
     {
       "bytes": 4772,
@@ -93,14 +93,19 @@
       "sha256": "cbc09b20c4245133a9cc063356b1bcd4c244ba4ca7791ae7b26a85af035244a4"
     },
     {
-      "bytes": 8050,
+      "bytes": 8251,
       "path": "docs/EDGE_AND_OPERATIONS_POLICY.md",
-      "sha256": "7727273622edde4ae9cfa3fb91fa5284d9910ff5d0027435d66c9137fd90ab49"
+      "sha256": "5424180abb81c5514aaeaa0a5e6147a6b966b5cce6592c0952414672bc972f9c"
     },
     {
       "bytes": 4961,
       "path": "docs/INERT_RENDER_SERVICE_AUDIT_V1.md",
       "sha256": "5058eac29a8d900f1541e87806f5e15b3e2b52c366ebefe5d714b0ee21907294"
+    },
+    {
+      "bytes": 9274,
+      "path": "docs/LOCAL_TESTER_REVIEW_V1.md",
+      "sha256": "ada467a0b4ffa517610180a274a193ce4226bb7ea5f1820d5d867835d0d9e2cf"
     },
     {
       "bytes": 3468,
@@ -128,14 +133,14 @@
       "sha256": "4589440a182f82c3ce322d92e070d836dfe4757a4e7e8fc36ba6fa4f8d9ce135"
     },
     {
-      "bytes": 8514,
+      "bytes": 9555,
       "path": "docs/PRODUCTION_DEPLOYMENT_GATE.md",
-      "sha256": "230268b1dedbbc3381afbdd452acb0327c74f788d90dde64a53c90cbe8d32e6f"
+      "sha256": "487ffe497c0cf57690413239ba545df7292d96a4093c2df39f6e98fc00c11b1e"
     },
     {
-      "bytes": 6074,
+      "bytes": 6400,
       "path": "docs/PUBLIC_SOURCE_MANIFEST.md",
-      "sha256": "4275ab6d6f4c022b900c927caac8b75aa51452159178b10527c23fe6bd0fd408"
+      "sha256": "7093716222a715562274dce07b5014e955e4ee3a99c928093231f91495e45a9f"
     },
     {
       "bytes": 1585,
@@ -158,14 +163,14 @@
       "sha256": "4b7f2305c8ff851c43fa4750879fe141341e72890e3d9b2490d50d4b0afbdeca"
     },
     {
-      "bytes": 3752,
+      "bytes": 5104,
       "path": "docs/RELEASE_CHECKLIST.md",
-      "sha256": "a12deb569a42b81ad35aeac947879815e7d33dda5c3f47d54a132a7f67c34238"
+      "sha256": "863bacc632755b10ece25130518866e160d4d0c656c817a46b8c7192e27a4097"
     },
     {
-      "bytes": 8183,
+      "bytes": 8476,
       "path": "docs/RENDER_HOSTING_DECISION.md",
-      "sha256": "75ada9fd71779eaef635b0f3f8d3a50f206a3406713a301d559e2e10b769c4b0"
+      "sha256": "6a2d730d3c9443aa9e0c5022d416a5a81913d1e8df91eb3913f851857431d738"
     },
     {
       "bytes": 3231,
@@ -185,7 +190,7 @@
     {
       "bytes": 1065,
       "path": "pyproject.toml",
-      "sha256": "6c932b86f5b617758a311db351eb8f3c247aa79b83582cb4a930244102de0d22"
+      "sha256": "8fa989a57758ee76bfe8f37031cb968f0f670cefaf68b38c8241d0aa2bb838f0"
     },
     {
       "bytes": 620,
@@ -208,24 +213,24 @@
       "sha256": "bce6a0a6173d4c2180527b1b7a1e5c86ee96e2d313e4ebd1e07b8cab02b404f6"
     },
     {
-      "bytes": 5567,
+      "bytes": 5890,
       "path": "scripts/release_manifest.py",
-      "sha256": "7edf74c16bb0f4be3d3d61f2b0fa3f2ed30990816fbc9e9367f8a02f23d0963a"
+      "sha256": "c89e5fb98dc07efb6a9cf755fce026cbd047d8b905b2506e22f29bcce8786e42"
     },
     {
       "bytes": 122,
       "path": "src/viasign_parser/__init__.py",
-      "sha256": "aec9b689ec44cd0b497e5ea4793951aac89bd734e046b8731375f1a095aa65ad"
+      "sha256": "589e907ed1b687a36e95efb89fcb8b93d375df1563d0a07f4a7f8a7992fa54e9"
     },
     {
       "bytes": 5110,
       "path": "src/viasign_parser/api.py",
-      "sha256": "3eef1b893b76787555f83eff3977b5925fc8e71782b374566fdf3a23f2868e0a"
+      "sha256": "dd72c9e561953a8d66866cb6aaa9ea6a1049fdfd8b05a4237a4ee4220d8c1588"
     },
     {
       "bytes": 1852,
       "path": "src/viasign_parser/api_models.py",
-      "sha256": "39ebf96f544ce1e81a1ea89733bc6cac8354425c60c09df5aa52c9809cd90541"
+      "sha256": "914a1ef323471d515b2f428858433aeb13e96ec4837279b2a2d32476984e9659"
     },
     {
       "bytes": 3854,
@@ -238,9 +243,9 @@
       "sha256": "8b1c31ff3b65b79b740c8c0a3fc035e560e53332663aca2e3b3f3c695226fa81"
     },
     {
-      "bytes": 3605,
+      "bytes": 3724,
       "path": "src/viasign_parser/parser.py",
-      "sha256": "93d1293a5063e4f427cb8de60f07fdca1d4489645f2303d0232cd9db01f87043"
+      "sha256": "2020154fe8e278a8e64d65548cef1977fcf46bfa85d5ae7cdec3f876577e1b61"
     },
     {
       "bytes": 656,
@@ -258,9 +263,9 @@
       "sha256": "3c3a0f0436c331f20570b76fbbb5da00866bbf81081c32a6228d3d191f207bea"
     },
     {
-      "bytes": 1293,
+      "bytes": 1294,
       "path": "tests/fixtures/v1/README.md",
-      "sha256": "d78544f53f504d2a0cd7e42b82517198adfa1fdf56d232bf6a4736159d5db5c6"
+      "sha256": "f48b1648d96f659329a66e3bfab6d5f6428269aa1fde329be9ed964463570db5"
     },
     {
       "bytes": 625,
@@ -283,9 +288,9 @@
       "sha256": "cf6661d88ba6437dad8db0874963813cd8b318527907ade1ac1521a1c8efb174"
     },
     {
-      "bytes": 1084,
+      "bytes": 1097,
       "path": "tests/fixtures/v1/invalid/unsupported_with_analysis.json",
-      "sha256": "12f1710e3a8139f14cfbbce7404bf452c341c1c422d317e2a5123216031cd270"
+      "sha256": "8ba9acb3fb60a34b0b1ef646be68951d2356d7600794e71b4539c6c2cae5d15c"
     },
     {
       "bytes": 870,
@@ -293,9 +298,9 @@
       "sha256": "be46ef7ac30d72c89efdce39eacf807d3760f5910cf697a379bb1cb703fc5d21"
     },
     {
-      "bytes": 805,
-      "path": "tests/fixtures/v1/unsupported/name_sign_generation.json",
-      "sha256": "9b72bd27d6409f08b9c93ee5101224e06922406c47dc2533d41e1afdaf8606f5"
+      "bytes": 818,
+      "path": "tests/fixtures/v1/unsupported/name_sign_boundary.json",
+      "sha256": "1efd8dafd9ab8910f7013541d565e669de448a12997a804724e6590306e2a877"
     },
     {
       "bytes": 649,
@@ -303,9 +308,9 @@
       "sha256": "1e955e7851efc69db7579e4d0c98096d840956afbdd619646644168b2f18b9b8"
     },
     {
-      "bytes": 13647,
+      "bytes": 14234,
       "path": "tests/test_api.py",
-      "sha256": "9adb66886e6266370d3976d3dde00091dc877d22a245da52fc59dd9fb96fa084"
+      "sha256": "eec3975fe352f050276fa16f1fdfe7c0371f5c4e47fe0a0d49c96e0fadbc7f15"
     },
     {
       "bytes": 503,
@@ -323,9 +328,9 @@
       "sha256": "c3f0a87ceb4d5f12a5e4126791804005ba56f893d788b8dc9ed1bb9a0dcb4ea4"
     },
     {
-      "bytes": 3449,
+      "bytes": 4492,
       "path": "tests/test_parser.py",
-      "sha256": "13bd10ad71d8ad1f82cce5f90d09d7379f0bd6ff70cfde71d0c628150a4cad84"
+      "sha256": "ee0d00682ef061fc16da7f6133d98bc2fd1eaa026290962d6b9aedfd9e7d23d4"
     },
     {
       "bytes": 2126,
@@ -333,9 +338,9 @@
       "sha256": "1362db4ed3b93c8d09312cafa65c1a61c21cc83f16291ea9f71a42b22493d7f3"
     },
     {
-      "bytes": 2977,
+      "bytes": 6321,
       "path": "tests/test_release_candidate.py",
-      "sha256": "7c32656799f84ee99918c99fa63a03c72eb0b35c1013363d00c455174537280f"
+      "sha256": "f9c9c9394010a0e7e7cd30132bb0d45e5a285a390e83fdffaa6478099c445b18"
     },
     {
       "bytes": 681,
@@ -369,18 +374,27 @@
   "publication_authorized": true,
   "published_source": {
     "branch": "main",
-    "commit": "842a9ad820e4ac919fb88371a3ab9199ebc74a79",
+    "commit": "aeca8bedadf16655fea34726bb3db9e780ba0f07",
     "repository": "https://github.com/Viathorne-Labs/viasign-parser"
   },
   "required_invariants": {
     "motion_ready": false,
     "review_required": true
   },
+  "review_gates": {
+    "deaf_sgsl_community": "pending",
+    "repository_owner_enabled_flow_wording": {
+      "items_approved": 5,
+      "recorded_on": "2026-07-17",
+      "status": "complete"
+    },
+    "security_privacy_deployment": "pending"
+  },
   "root": ".",
-  "snapshot_date": "2026-07-13",
-  "status": "internal_health_audit_publication_authorized",
+  "snapshot_date": "2026-07-17",
+  "status": "local_tester_review_publication_authorized",
   "summary": {
-    "file_count": 70,
-    "total_bytes": 233683
+    "file_count": 71,
+    "total_bytes": 253271
   }
 }

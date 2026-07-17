@@ -1,7 +1,7 @@
 # ViaSign Parser Public Architecture
 
 - **Status:** Published pre-alpha boundary; hosted activation blocked
-- **Last updated:** 2026-07-13
+- **Last updated:** 2026-07-17
 - **Repository:** `viasign-parser`
 
 ## Purpose
@@ -67,7 +67,7 @@ motion-unavailable values.
 | `api_models.py` | Strict public request, health, metadata, and error models | Linguistic rules or motion fields |
 | `contracts.py` | Typed response contract and versioned provenance | Transport, storage, or private identifiers |
 | `surface.py` | Closed natural-English surface categories | Submitted values, SgSL rules, glosses, or private vocabulary |
-| `parser.py` | Clean-room orchestration, name-sign safety, and visible uncertainty | Private parser logic, lexicon, or benchmarks |
+| `parser.py` | Clean-room orchestration, strict name-sign boundary, and visible uncertainty | Private parser logic, lexicon, or benchmarks |
 | `safety.py` | Final response-invariant enforcement | Recovery that makes unsafe output look valid |
 | `middleware.py` | Body ceiling, request deadline, and transient rate limiting | Persistent identities, sentence logs, or analytics |
 | `settings.py` | Validated local and deployment configuration | Secrets or wildcard production origins |
@@ -95,8 +95,9 @@ motion engine, review system, or data store.
    and text longer than 1,000 characters. Validation errors return a generic
    fail-closed body without submitted values.
 6. The public parser returns closed, non-verbatim surface categories with
-   visible uncertainty or an explicit unsupported result. Name-sign generation
-   is blocked without analysis fallback.
+   visible uncertainty or an explicit unsupported result. Recognized
+   name-sign-related input is blocked without analysis fallback, including
+   informational and generation wording.
 7. The safety layer verifies the frozen schema and review/motion invariants.
 8. The response receives `Cache-Control: no-store` and
    `X-Content-Type-Options: nosniff`. It includes input mode metadata but never
@@ -160,6 +161,10 @@ or copy a private/local Git object store.
 - `ROADMAP.md` records completed gates and future sequencing.
 - `docs/PUBLIC_SOURCE_MANIFEST.md` records migration eligibility and exclusions.
 - `docs/RELEASE_CHECKLIST.md` separates technical evidence from owner approval.
+- `docs/LOCAL_TESTER_REVIEW_V1.md` records local browser-assisted evidence,
+  bounded human accessibility checks, and repository-owner wording decisions
+  while keeping broader Deaf/SgSL community review, security/privacy deployment
+  review, source publication, deployment, and activation decisions separate.
 - Deployment documents record provider-specific controls without authorizing
   hosting.
 

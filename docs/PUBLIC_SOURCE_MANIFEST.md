@@ -39,8 +39,9 @@ migrated parser implementation or private benchmark data.
 
 The minimal `src/viasign_parser/parser.py` implementation was also authored in
 this repository from the public contract and synthetic fixtures. It implements
-visible uncertainty and an explicit policy block for name-sign generation. It
-contains no SgSL grammar or private lexicon logic.
+visible uncertainty and blocks all recognized name-sign-related input without
+analysis, including informational wording. It contains no SgSL grammar or
+private lexicon logic.
 
 `src/viasign_parser/surface.py` was independently authored for contract `1.1.0`.
 It reports only closed natural-English sentence, question, question-category,
@@ -81,6 +82,11 @@ repository metadata, non-sensitive provider configuration, and technical
 operational evidence. It excludes provider identifiers, deploy or sync hooks,
 account contact details, credentials, submitted text, parser output, and
 reviewer identities.
+
+`docs/LOCAL_TESTER_REVIEW_V1.md` was independently authored from the public API
+contract, the public website candidate, and non-sensitive local technical
+checks. It records no submitted sentence, reviewer identity, private source,
+private fixture, or public activation approval.
 
 `scripts/release_manifest.py`, `scripts/audit_release_candidate.py`, and
 `docs/RELEASE_CANDIDATE_AUDIT_V1.md` were newly authored for this public

@@ -156,15 +156,31 @@ test submissions:
 
 - [x] Repository owner approved the published V2 source artifact and the inert
   Render host configuration.
-- [ ] Security and privacy review approves the complete edge, logging, and
-  retention policy; the origin/CSP and privacy-notice preparation is recorded.
-- [ ] Website and API contract-version checks pass together.
+- [ ] Security and privacy deployment review approves the complete edge,
+  logging, and retention policy; the origin/CSP and privacy-notice preparation
+  is recorded.
+- [x] Website and API contract-version checks pass together in the local
+  candidate for contract `1.1.0`.
 - [ ] Unavailable, timeout, malformed, incompatible, uncertain, and unsupported
-  states pass end-to-end checks.
-- [ ] Keyboard, zoom/reflow, reduced-motion, contrast, and screen-reader checks
-  pass on the final local candidate and are repeated after activation if one is
-  separately approved.
-- [ ] Deaf/SgSL reviewers approve the claims, examples, and review language.
+  states pass end-to-end checks. Local browser-assisted evidence covers
+  unavailable, uncertain, and unsupported states; timeout, malformed, and
+  incompatible end-to-end evidence remains open.
+- [x] The completed `viathorne-web` representative accessibility baseline covers
+  the shared shell and disabled tester boundary, including human keyboard,
+  native zoom, Safari VoiceOver, macOS contrast, reduced-motion, focus, and
+  reflow evidence.
+- [x] The enabled tester's changing-content delta passed a bounded local human
+  check for keyboard navigation, Safari VoiceOver ready/checking/final and
+  revealed-result phrases, plus native 200 percent zoom and increased contrast
+  with a safe result visible. Repeat the relevant tester checks after activation
+  if it is separately approved. The unavailable-state VoiceOver path was not
+  included in this human pass and remains within the open end-to-end state gate
+  above. Evidence is recorded in `docs/LOCAL_TESTER_REVIEW_V1.md`.
+- [x] Repository-owner enabled-flow wording review covers inactive status,
+  capability limits, qualified privacy, consent, founder/community positioning,
+  and the Apache-2.0 source carve-out.
+- [ ] Broader Deaf/SgSL community reviewers approve the claims, examples, and
+  review language.
 - [ ] A short, consent-led pilot plan defines audience, duration, feedback path,
   moderation, incident owner, and stop conditions.
 - [x] A separate approval for inert service creation is recorded; public
