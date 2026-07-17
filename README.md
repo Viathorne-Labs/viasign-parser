@@ -85,11 +85,11 @@ docker run --rm -p 8000:10000 \
 The Render Blueprint remains inert by default: automatic deploys are disabled,
 maintenance mode is enabled, and CORS is empty. See the
 [Render hosting decision](docs/RENDER_HOSTING_DECISION.md) before changing
-those values. Parser `0.2.1` source is published. Its exact local
-deployment-candidate evidence has separate publication approval, and the live
-inert service remains on parser `0.2.0`. Updating it
-requires a later, separate approval. DNS, production CORS, website connection,
-maintenance-mode removal, and visitor submissions remain blocked.
+those values. Parser `0.2.1` source and its exact local deployment-candidate
+evidence are published. The reviewed `0.2.1` commit is now live only inside the
+inert service, and its post-deployment evidence has separate publication
+approval. DNS, production CORS, website connection, maintenance-mode removal,
+visitor submissions, and public activation remain blocked.
 
 ## Repository boundaries
 

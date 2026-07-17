@@ -13,11 +13,13 @@ maintenance mode on, empty CORS, automatic deploys off, one Starter instance,
 and no website connection or DNS change. It does not approve production CORS,
 maintenance-mode removal, visitor traffic, or submissions.
 
-The inert service now runs exact public merge commit
-`e8ca6a688c6905fba1f2f02646b665623f0c689e`. The live configuration, isolation,
-logs, metrics surface, notifications, and remaining evidence gaps are recorded
-in `docs/INERT_RENDER_SERVICE_AUDIT_V1.md`. The service remains in maintenance
-mode with empty CORS and no website or DNS connection.
+The inert service now runs exact reviewed parser commit
+`d88bc2664628135a04ee4961866fea2380e1343d` at parser `0.2.1`. The prior
+`e8ca6a688c6905fba1f2f02646b665623f0c689e` deployment remains available as an
+unexercised rollback candidate. The live configuration, isolation, logs,
+metrics surface, notifications, and remaining evidence gaps are recorded in
+`docs/INERT_RENDER_SERVICE_AUDIT_V1.md`. The service remains in maintenance mode
+with empty CORS and no website or DNS connection.
 
 ## Why Render fits this stage
 
@@ -174,7 +176,7 @@ Official references:
   `docs/EDGE_AND_OPERATIONS_POLICY.md`.
 - [ ] Complete live domain, health, notification, metric, log, and rollback
   evidence. The exact internal health response is verified; custom-domain TLS
-  and rollback remain unavailable or separately blocked.
+  and a controlled rollback rehearsal remain separately blocked.
 - [x] Complete bounded local assistive-technology and repository-owner
   enabled-flow wording review.
 - [ ] Complete broader Deaf/SgSL community review and repeat the relevant

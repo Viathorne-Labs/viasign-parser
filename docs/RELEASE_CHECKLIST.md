@@ -2,7 +2,9 @@
 
 The reviewed V2 source is public, the local-tester safety update has separate
 source-publication approval, and the 2026-07-17 deployment evidence has separate
-publication approval. Deployment and public activation are not approved.
+publication approval. The one-time `d88bc266` inert-deployment authorization
+was consumed; no additional deployment or provider change and no public
+activation are approved.
 
 ## Source
 
@@ -103,17 +105,23 @@ website connection.
   deployment-candidate checks are complete.
 - [x] The 2026-07-17 provider-refresh and exact-image evidence received explicit
   publication approval without authorizing a Render update or activation.
-- [ ] A later, separate provider-mutation approval authorizes exactly hook
+- [x] Deployment-evidence PR #5 merged into public `main` at
+  `d6c59f7c0c9b1e00aad2b73e42cebfb38ff2d172`.
+- [x] A later, separate provider-mutation approval authorized exactly hook
   regeneration plus **Deploy a specific commit** for
   `d88bc2664628135a04ee4961866fea2380e1343d`, with no other provider or
-  activation change.
-- [ ] Only after that approval, regenerate the deploy hook through the dashboard;
-  do not invoke the old or new value as a test and record neither value.
-- [ ] After rotation, update the inert service from parser `0.2.0` using
-  **Deploy a specific commit**, never **Deploy latest commit**. Verify the live
-  event shows the exact commit while maintenance mode, empty CORS, disabled
+  activation change. That two-action authorization is consumed and permits no
+  additional provider mutation.
+- [x] After that approval, the deploy hook was regenerated through the
+  dashboard; neither the old nor new value was invoked as a test or recorded.
+- [x] After rotation, the inert service was updated from parser `0.2.0` using
+  **Deploy a specific commit**, never **Deploy latest commit**. The live event
+  showed the exact commit while maintenance mode, empty CORS, disabled
   auto-deploys, unresolved DNS, disabled Render subdomain, and website
-  disconnection remain unchanged.
+  disconnection remained unchanged.
+- [x] The exact post-deployment evidence received separate publication approval
+  without authorizing any DNS, CORS, website, maintenance, traffic, or public
+  activation change.
 - [ ] Before any website connection, the website pins the exact production API
   and page origins and validates the complete `429` contract without rendering
   free-form server text.
