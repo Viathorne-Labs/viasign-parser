@@ -1,6 +1,20 @@
 {
-  "candidate_id": "viasign-parser-public-v2-local-tester-review-candidate",
+  "candidate_id": "viasign-parser-public-0.2.1-deployment-evidence-candidate",
   "deployment_authorized": false,
+  "deployment_candidate": {
+    "amd64_image_id": "sha256:55f5a6b41791527e28c5a393061a2d13b79efa487f257be058d51dfb2b48219d",
+    "arm64_image_id": "sha256:61a6f7b9178b19d3dbc580702764a237b820a23be6a331e72acf582e3106f58d",
+    "deploy_hook_rotation_status": "pending",
+    "deploy_latest_commit_allowed": false,
+    "deployment_method": "specific_commit",
+    "deployment_update_authorized": false,
+    "local_artifact_review": "complete",
+    "parser_version": "0.2.1",
+    "provider_state_refreshed": true,
+    "reviewed_on": "2026-07-17",
+    "source_commit": "d88bc2664628135a04ee4961866fea2380e1343d"
+  },
+  "deployment_evidence_publication_authorized": true,
   "files": [
     {
       "bytes": 142,
@@ -53,14 +67,14 @@
       "sha256": "c1c94c015afd9b438104cfb05b250aa88e0b582fb0d495db83dd53d8b7c6c85c"
     },
     {
-      "bytes": 5458,
+      "bytes": 5560,
       "path": "README.md",
-      "sha256": "9390b6d07bd316f5346a3016133237cb01eedae66ab56c6d1c9dd9fc1aec4888"
+      "sha256": "d1e95b2334b480afaeb51dde8c079f65c64c99de9622d068212111924ffd00b4"
     },
     {
-      "bytes": 8114,
+      "bytes": 9626,
       "path": "ROADMAP.md",
-      "sha256": "75438c5acbc5d3c949603b0fb136bc78be767192fac63e161a94ae947f64d631"
+      "sha256": "f7f458c7957e9f4a41a5cb57b8119195e8ea113a4a423fd8f950850586852f54"
     },
     {
       "bytes": 626,
@@ -83,9 +97,9 @@
       "sha256": "3ed33412f20664fa4fd156264a8588f0c9e1f7222be40112e12c06937a303461"
     },
     {
-      "bytes": 4772,
+      "bytes": 6749,
       "path": "docs/CONTAINER_SECURITY_REVIEW.md",
-      "sha256": "455db16932b5bce611daf20613bff68d0a792938abade6c0cce2e5be1da9a1ce"
+      "sha256": "a5ea3b278f394eff97d377c66b7d8d38be873b9876ed4db78160f4716536aeff"
     },
     {
       "bytes": 907,
@@ -98,9 +112,9 @@
       "sha256": "5424180abb81c5514aaeaa0a5e6147a6b966b5cce6592c0952414672bc972f9c"
     },
     {
-      "bytes": 4961,
+      "bytes": 7905,
       "path": "docs/INERT_RENDER_SERVICE_AUDIT_V1.md",
-      "sha256": "5058eac29a8d900f1541e87806f5e15b3e2b52c366ebefe5d714b0ee21907294"
+      "sha256": "ac93dd854ad7fa82b474ff43a8948e90fbbda15a20395593d456b7dd31eafc79"
     },
     {
       "bytes": 9274,
@@ -133,9 +147,9 @@
       "sha256": "4589440a182f82c3ce322d92e070d836dfe4757a4e7e8fc36ba6fa4f8d9ce135"
     },
     {
-      "bytes": 9555,
+      "bytes": 11287,
       "path": "docs/PRODUCTION_DEPLOYMENT_GATE.md",
-      "sha256": "487ffe497c0cf57690413239ba545df7292d96a4093c2df39f6e98fc00c11b1e"
+      "sha256": "171e66575f1b610e06096c889f4b21931cdefbbf8e4bceeb348207d6ffe75491"
     },
     {
       "bytes": 6400,
@@ -163,9 +177,9 @@
       "sha256": "4b7f2305c8ff851c43fa4750879fe141341e72890e3d9b2490d50d4b0afbdeca"
     },
     {
-      "bytes": 5104,
+      "bytes": 6491,
       "path": "docs/RELEASE_CHECKLIST.md",
-      "sha256": "863bacc632755b10ece25130518866e160d4d0c656c817a46b8c7192e27a4097"
+      "sha256": "2a7e408184f7bbadab0040b7086de216970cc66401b4e7719243c501604a6069"
     },
     {
       "bytes": 8476,
@@ -173,9 +187,9 @@
       "sha256": "6a2d730d3c9443aa9e0c5022d416a5a81913d1e8df91eb3913f851857431d738"
     },
     {
-      "bytes": 3231,
+      "bytes": 3762,
       "path": "docs/THIRD_PARTY_DEPENDENCY_REVIEW.md",
-      "sha256": "6cb998c419194d003a698e8c9d41d269941e6a7df04e5849d3f5ba04872b6d04"
+      "sha256": "bf03764fd94e4434bdb8b5a6a37af434fa991b49d5f5d5806d64efc41e03cbcb"
     },
     {
       "bytes": 3412,
@@ -213,9 +227,9 @@
       "sha256": "bce6a0a6173d4c2180527b1b7a1e5c86ee96e2d313e4ebd1e07b8cab02b404f6"
     },
     {
-      "bytes": 5890,
+      "bytes": 7347,
       "path": "scripts/release_manifest.py",
-      "sha256": "c89e5fb98dc07efb6a9cf755fce026cbd047d8b905b2506e22f29bcce8786e42"
+      "sha256": "6ccdb3f9f1c5a47832976b832ea1341365b0e1276b9beed9bf3b6f6a9d4262a6"
     },
     {
       "bytes": 122,
@@ -323,9 +337,9 @@
       "sha256": "9330d25d1578f647d6cc37cece8f7715a43063f8bf2289f45acbe1a234160c00"
     },
     {
-      "bytes": 3912,
+      "bytes": 4312,
       "path": "tests/test_deployment_boundary.py",
-      "sha256": "c3f0a87ceb4d5f12a5e4126791804005ba56f893d788b8dc9ed1bb9a0dcb4ea4"
+      "sha256": "24588193f4c10025250d04e346d72fb97c9b47fa50f0c61acd0e3dfb19ca5d88"
     },
     {
       "bytes": 4492,
@@ -338,9 +352,9 @@
       "sha256": "1362db4ed3b93c8d09312cafa65c1a61c21cc83f16291ea9f71a42b22493d7f3"
     },
     {
-      "bytes": 6321,
+      "bytes": 9090,
       "path": "tests/test_release_candidate.py",
-      "sha256": "f9c9c9394010a0e7e7cd30132bb0d45e5a285a390e83fdffaa6478099c445b18"
+      "sha256": "d7976e894a68cbdf535d7eb0a02301380c49eb147ced2c4909d5b3171eb4ecac"
     },
     {
       "bytes": 681,
@@ -362,39 +376,53 @@
   "inert_service_created": true,
   "inert_service_creation_authorized": true,
   "live_inert_service": {
+    "auto_deploy": false,
     "commit": "e8ca6a688c6905fba1f2f02646b665623f0c689e",
     "cors_origins": "",
+    "custom_domain_status": "waiting_for_dns",
     "health_verified": true,
-    "maintenance_mode": true
+    "last_verified_on": "2026-07-17",
+    "maintenance_mode": true,
+    "parser_version": "0.2.0",
+    "render_subdomain": "disabled"
   },
   "manifest_self_hashed": false,
   "manifest_self_path": "provenance/v1/release-candidate-manifest.json",
   "manifest_version": "viasign.public-release-manifest.v1",
   "public_activation_authorized": false,
   "publication_authorized": true,
-  "published_source": {
-    "branch": "main",
-    "commit": "aeca8bedadf16655fea34726bb3db9e780ba0f07",
-    "repository": "https://github.com/Viathorne-Labs/viasign-parser"
-  },
   "required_invariants": {
     "motion_ready": false,
     "review_required": true
   },
   "review_gates": {
     "deaf_sgsl_community": "pending",
+    "repository_owner_deployment_evidence_publication": {
+      "items_approved": 5,
+      "recorded_on": "2026-07-17",
+      "status": "complete"
+    },
     "repository_owner_enabled_flow_wording": {
       "items_approved": 5,
       "recorded_on": "2026-07-17",
       "status": "complete"
     },
-    "security_privacy_deployment": "pending"
+    "security_privacy_deployment": "pending",
+    "website_defense_in_depth": "pending"
+  },
+  "reviewed_deployment_source": {
+    "authorized_on": "2026-07-17",
+    "branch": "main",
+    "commit": "d88bc2664628135a04ee4961866fea2380e1343d",
+    "parser_version": "0.2.1",
+    "repository": "https://github.com/Viathorne-Labs/viasign-parser"
   },
   "root": ".",
   "snapshot_date": "2026-07-17",
-  "status": "local_tester_review_publication_authorized",
+  "source_publication_authorized": true,
+  "status": "deployment_candidate_evidence_publication_authorized",
   "summary": {
     "file_count": 71,
-    "total_bytes": 253271
+    "total_bytes": 268082
   }
 }

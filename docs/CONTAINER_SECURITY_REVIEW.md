@@ -90,6 +90,46 @@ Trivy 0.72.0 refreshed its database and again reported zero Alpine and
 Python-package vulnerabilities for both images, no embedded-secret finding,
 and zero Dockerfile misconfigurations.
 
+## Exact 0.2.1 deployment-candidate refresh
+
+On 2026-07-17, exact public source commit
+`d88bc2664628135a04ee4961866fea2380e1343d` was exported to a clean temporary
+directory and rebuilt with Docker Engine 29.6.1. The pinned base digest was
+unchanged. The resulting local image IDs were:
+
+- Linux arm64:
+  `sha256:61a6f7b9178b19d3dbc580702764a237b820a23be6a331e72acf582e3106f58d`
+- Linux amd64:
+  `sha256:55f5a6b41791527e28c5a393061a2d13b79efa487f257be058d51dfb2b48219d`
+
+Trivy 0.72.0 refreshed its vulnerability database immediately before each
+scan. Across all severities, both images reported zero Alpine and Python-package
+vulnerabilities and no embedded-secret finding. The exact Dockerfile reported
+zero misconfigurations.
+
+Both images ran locally as `10001:10001` with a read-only root filesystem and
+no persistent volume. Each became healthy, passed `pip check`, and returned the
+exact health response `{"status":"ok"}`. Metadata reported parser `0.2.1`,
+`review_required=true`, and `motion_ready=false`.
+
+The bounded runtime smoke review also confirmed:
+
+- Render-proxy mode fails closed with `503 client_network_unavailable` when a
+  valid forwarded network address is unavailable;
+- ordinary public-safe input returns only the closed surface categories, no
+  sign-aware form, no candidate gloss, and no submitted-text echo;
+- name-sign generation remains unsupported with no analysis fallback;
+- malformed JSON returns a generic `422`, `/docs` returns `404`, and a body over
+  4 KiB returns no-store `413 request_too_large`;
+- a fresh test identity receives 20 burst responses followed by `429` with a
+  numeric `Retry-After` value; and
+- empty CORS returns no production `Access-Control-Allow-Origin` header, while
+  parse responses retain no-store and nosniff headers and omit the Uvicorn
+  `Server` header.
+
+The temporary containers were stopped and removed. These results authorize no
+Render update, DNS, CORS, website connection, traffic, or public activation.
+
 ## Release rule
 
 Immediately before any deployment:

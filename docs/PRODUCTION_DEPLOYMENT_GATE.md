@@ -1,7 +1,8 @@
 # Production Deployment Gate
 
-- **Status:** Inert service creation approved; public activation blocked
-- **Last reviewed:** 2026-07-13
+- **Status:** Exact 0.2.1 candidate review complete and evidence publication
+  approved; inert service update and public activation blocked
+- **Last reviewed:** 2026-07-17
 - **Applies to:** The public `viasign-parser` HTTP service
 
 Render in Singapore is the selected provider and region. The provider-specific
@@ -156,6 +157,26 @@ test submissions:
 
 - [x] Repository owner approved the published V2 source artifact and the inert
   Render host configuration.
+- [x] Exact published source commit `d88bc266` passed the 2026-07-17 provenance,
+  dependency, arm64/amd64 image, configuration, and local runtime smoke checks;
+  the live provider state was refreshed without mutation.
+- [x] Repository owner explicitly approves publication of the 2026-07-17
+  provider-refresh and exact-image evidence. This evidence-publication decision
+  does not authorize any Render update or activation.
+- [ ] A later, separate provider-mutation approval authorizes exactly two inert
+  actions: regenerate the deploy hook and use **Deploy a specific commit** for
+  `d88bc266`. It authorizes no other provider, DNS, CORS, website, traffic, or
+  activation change.
+- [ ] Only after that approval, regenerate the deploy hook through the dashboard
+  and rely on Render's rotation action to invalidate the prior value. Do not
+  invoke the old or new hook as a test, and record neither value.
+- [ ] After rotation, update the existing inert service from parser `0.2.0` by
+  using **Deploy a specific commit** for `d88bc266`. **Deploy latest commit** is
+  prohibited for this candidate. Verify the live event shows `d88bc266` before
+  internal health checks, while
+  maintenance mode stays on, CORS stays empty, automatic deploys stay off, DNS
+  stays unresolved, the Render subdomain stays disabled, and the website stays
+  disconnected.
 - [ ] Security and privacy deployment review approves the complete edge,
   logging, and retention policy; the origin/CSP and privacy-notice preparation
   is recorded.
@@ -165,6 +186,10 @@ test submissions:
   states pass end-to-end checks. Local browser-assisted evidence covers
   unavailable, uncertain, and unsupported states; timeout, malformed, and
   incompatible end-to-end evidence remains open.
+- [ ] Website defense in depth pins both the production API origin and the
+  approved page origin, and generates the approved `429` wording locally after
+  validating the complete rate-limit contract instead of rendering free-form
+  server text. This remains separate from configuring the production API value.
 - [x] The completed `viathorne-web` representative accessibility baseline covers
   the shared shell and disabled tester boundary, including human keyboard,
   native zoom, Safari VoiceOver, macOS contrast, reduced-motion, focus, and

@@ -120,19 +120,26 @@ def build_manifest(root: Path = ROOT) -> dict[str, object]:
 
     return {
         "manifest_version": "viasign.public-release-manifest.v1",
-        "candidate_id": "viasign-parser-public-v2-local-tester-review-candidate",
+        "candidate_id": "viasign-parser-public-0.2.1-deployment-evidence-candidate",
         "snapshot_date": "2026-07-17",
-        "status": "local_tester_review_publication_authorized",
+        "status": "deployment_candidate_evidence_publication_authorized",
         "hash_algorithm": "sha256",
         "root": ".",
         "manifest_self_path": MANIFEST_RELATIVE_PATH.as_posix(),
         "manifest_self_hashed": False,
         "publication_authorized": True,
+        "source_publication_authorized": True,
+        "deployment_evidence_publication_authorized": True,
         "deployment_authorized": False,
         "inert_service_creation_authorized": True,
         "inert_service_created": True,
         "public_activation_authorized": False,
         "review_gates": {
+            "repository_owner_deployment_evidence_publication": {
+                "status": "complete",
+                "recorded_on": "2026-07-17",
+                "items_approved": 5,
+            },
             "repository_owner_enabled_flow_wording": {
                 "status": "complete",
                 "recorded_on": "2026-07-17",
@@ -140,17 +147,42 @@ def build_manifest(root: Path = ROOT) -> dict[str, object]:
             },
             "deaf_sgsl_community": "pending",
             "security_privacy_deployment": "pending",
+            "website_defense_in_depth": "pending",
         },
-        "published_source": {
+        "reviewed_deployment_source": {
             "repository": "https://github.com/Viathorne-Labs/viasign-parser",
             "branch": "main",
-            "commit": "aeca8bedadf16655fea34726bb3db9e780ba0f07",
+            "commit": "d88bc2664628135a04ee4961866fea2380e1343d",
+            "parser_version": "0.2.1",
+            "authorized_on": "2026-07-17",
         },
         "live_inert_service": {
             "commit": "e8ca6a688c6905fba1f2f02646b665623f0c689e",
+            "parser_version": "0.2.0",
+            "last_verified_on": "2026-07-17",
             "health_verified": True,
             "maintenance_mode": True,
             "cors_origins": "",
+            "auto_deploy": False,
+            "render_subdomain": "disabled",
+            "custom_domain_status": "waiting_for_dns",
+        },
+        "deployment_candidate": {
+            "source_commit": "d88bc2664628135a04ee4961866fea2380e1343d",
+            "parser_version": "0.2.1",
+            "reviewed_on": "2026-07-17",
+            "provider_state_refreshed": True,
+            "local_artifact_review": "complete",
+            "deployment_update_authorized": False,
+            "deployment_method": "specific_commit",
+            "deploy_latest_commit_allowed": False,
+            "deploy_hook_rotation_status": "pending",
+            "arm64_image_id": (
+                "sha256:61a6f7b9178b19d3dbc580702764a237b820a23be6a331e72acf582e3106f58d"
+            ),
+            "amd64_image_id": (
+                "sha256:55f5a6b41791527e28c5a393061a2d13b79efa487f257be058d51dfb2b48219d"
+            ),
         },
         "required_invariants": {
             "review_required": True,

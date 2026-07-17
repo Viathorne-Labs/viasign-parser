@@ -68,12 +68,18 @@ def test_inert_service_audit_records_partial_evidence_without_activation() -> No
         encoding="utf-8"
     )
 
-    assert "Owner-approved internal health update; activation blocked" in audit
+    assert "Provider refresh and exact 0.2.1 candidate evidence approved for" in audit
+    assert "publication; inert service update and activation blocked" in audit
+    assert "approved all\n  five deployment-evidence publication items" in audit
+    assert "does not authorize a Render\n  update or public activation" in audit
     assert "Maintenance mode is enabled" in audit
     assert "VIASIGN_CORS_ORIGINS` is empty" in audit
     assert "HTTP 200" in audit
     assert '{"status":"ok"}' in audit
-    assert "no earlier successful artifact exists" in audit
+    assert "an earlier successful deployment and a rollback control" in audit
+    assert "same `e8ca6a6` source" in audit
+    assert "Deploy a specific commit" in audit
+    assert "Deploy latest commit" in audit
     assert "`review_required=true`" in audit
     assert "`motion_ready=false`" in audit
 

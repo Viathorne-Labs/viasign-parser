@@ -1,7 +1,8 @@
 # Public Release Checklist
 
-The reviewed V2 source is public, and the local-tester safety update has separate
-source-publication approval. Hosting and public activation are not approved.
+The reviewed V2 source is public, the local-tester safety update has separate
+source-publication approval, and the 2026-07-17 deployment evidence has separate
+publication approval. Deployment and public activation are not approved.
 
 ## Source
 
@@ -42,8 +43,8 @@ source-publication approval. Hosting and public activation are not approved.
 
 ## Engineering
 
-- [x] Tests pass locally and the rebuilt container passes the runtime smoke
-  boundary; repeat against the exact approved release artifact.
+- [x] The exact parser `0.2.1` source at `d88bc266` passes 137 tests and the
+  rebuilt Linux arm64 and Linux amd64 images pass the runtime smoke boundary.
 - [x] Local browser-assisted tester evidence covers uncertain, prohibited,
   unavailable, contract, focus, and reflow boundaries as recorded in
   `docs/LOCAL_TESTER_REVIEW_V1.md`.
@@ -57,10 +58,10 @@ source-publication approval. Hosting and public activation are not approved.
   limits, Deaf/SgSL positioning, and licensing boundary is complete; broader
   community review remains separate.
 - [x] Secret, local-path, binary, private-import, provenance, dependency, and
-  container scans pass for the local candidate.
+  exact `0.2.1` arm64/amd64 container scans pass for the local candidate.
 - [x] Dependency versions are locked for the candidate.
-- [x] Runtime dependency licenses and notices are recorded; repeat the audit
-  against the final release lock.
+- [x] Runtime dependency licenses and notices are recorded and the exact `0.2.1`
+  lock passed the 2026-07-17 refresh.
 
 ## Publication
 
@@ -74,6 +75,8 @@ source-publication approval. Hosting and public activation are not approved.
 - [x] The local tester safety correction and bounded accessibility review
   evidence received separate source-publication approval on 2026-07-17 for
   parser PR #4.
+- [x] Parser PR #4 merged into public `main` at
+  `d88bc2664628135a04ee4961866fea2380e1343d`.
 
 ## Hosting
 
@@ -96,5 +99,23 @@ website connection.
 - [x] The internal-health evidence received separate publication approval.
 - [x] The approved internal-health evidence is merged into public `main` at
   `aeca8bedadf16655fea34726bb3db9e780ba0f07`.
+- [x] The 2026-07-17 read-only provider refresh and exact parser `0.2.1` local
+  deployment-candidate checks are complete.
+- [x] The 2026-07-17 provider-refresh and exact-image evidence received explicit
+  publication approval without authorizing a Render update or activation.
+- [ ] A later, separate provider-mutation approval authorizes exactly hook
+  regeneration plus **Deploy a specific commit** for
+  `d88bc2664628135a04ee4961866fea2380e1343d`, with no other provider or
+  activation change.
+- [ ] Only after that approval, regenerate the deploy hook through the dashboard;
+  do not invoke the old or new value as a test and record neither value.
+- [ ] After rotation, update the inert service from parser `0.2.0` using
+  **Deploy a specific commit**, never **Deploy latest commit**. Verify the live
+  event shows the exact commit while maintenance mode, empty CORS, disabled
+  auto-deploys, unresolved DNS, disabled Render subdomain, and website
+  disconnection remain unchanged.
+- [ ] Before any website connection, the website pins the exact production API
+  and page origins and validates the complete `429` contract without rendering
+  free-form server text.
 - [ ] Production CORS, website connection, maintenance-mode removal, public
   traffic, and submissions receive separate explicit approvals.
